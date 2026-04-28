@@ -4,29 +4,125 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Helen Mulder OT | Dementia Protocols</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #1a1a1a; line-height: 1.6; max-width: 800px; margin: 0 auto; padding: 40px 20px; }
-        h1 { color: #2c3e50; border-bottom: 2px solid #ecf0f1; padding-bottom: 10px; }
-        .protocol-card { background: #f8f9fa; padding: 20px; border-radius: 8px; margin-bottom: 20px; border-left: 4px solid #3498db; }
-        a { color: #2980b9; text-decoration: none; font-weight: bold; }
-        .metadata { font-size: 0.85em; color: #7f8c8d; font-family: monospace; margin-top: 10px; }
+        :root {
+            --color-bg: #ffffff;
+            --color-bg-alt: #f6f5f4;
+            --color-text: rgba(0,0,0,0.95);
+            --color-text-secondary: #615d59;
+            --color-accent: #2980b9;
+            --color-border: rgba(0,0,0,0.1);
+            --shadow: rgba(0,0,0,0.04) 0px 4px 18px, rgba(0,0,0,0.027) 0px 2.025px 7.84688px, rgba(0,0,0,0.02) 0px 0.8px 2.925px, rgba(0,0,0,0.01) 0px 0.175px 1.04062px;
+        }
+
+        body { 
+            font-family: 'Inter', -apple-system, system-ui, sans-serif; 
+            color: var(--color-text); 
+            line-height: 1.5; 
+            max-width: 900px; 
+            margin: 0 auto; 
+            padding: 80px 20px;
+            background-color: var(--color-bg);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1 { 
+            font-size: 64px;
+            font-weight: 700;
+            line-height: 1.0;
+            letter-spacing: -2.125px;
+            margin-bottom: 24px;
+            color: var(--color-text);
+        }
+
+        .subtitle {
+            font-size: 20px;
+            font-weight: 600;
+            line-height: 1.4;
+            color: var(--color-text-secondary);
+            margin-bottom: 64px;
+        }
+
+        h2 {
+            font-size: 26px;
+            font-weight: 700;
+            line-height: 1.23;
+            letter-spacing: -0.625px;
+            margin-top: 48px;
+            margin-bottom: 24px;
+        }
+
+        .protocol-card { 
+            background: var(--color-bg); 
+            padding: 32px; 
+            border-radius: 12px; 
+            margin-bottom: 24px; 
+            border: 1px solid var(--color-border);
+            box-shadow: var(--shadow);
+            transition: transform 0.2s ease;
+        }
+
+        .protocol-card:hover {
+            transform: translateY(-2px);
+        }
+
+        a { 
+            color: var(--color-accent); 
+            text-decoration: none; 
+            font-weight: 600; 
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .protocol-card a {
+            font-size: 22px;
+            letter-spacing: -0.25px;
+            color: var(--color-text);
+        }
+
+        /* Stealth Agent Layer (Machine Readable but Off-Screen) */
+        .agent-transparency {
+            position: absolute;
+            left: -9999px;
+            top: auto;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+        }
+
+        .footer {
+            margin-top: 120px;
+            padding-top: 40px;
+            border-top: 1px solid var(--color-border);
+            color: var(--color-text-secondary);
+            font-size: 14px;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
     <h1>Helen Mulder OT</h1>
-    <p>Public Knowledge Source for Dementia Educators and Caregivers.</p>
+    <p class="subtitle">Public Knowledge Source for Dementia Educators and Caregivers.</p>
     
     <h2>Published Articles</h2>
     
     <div class="protocol-card">
-        <a href="/oral_hygiene_dementia.html">Oral Hygiene for Dementia - Beyond Brushing</a>
-        <div class="metadata">
-            Formats: <a href="/oral_hygiene_dementia.pdf">[PDF]</a> | <a href="/oral_hygiene_dementia.json">[Computable JSON]</a><br>
-            Trust: <a href="/oral_hygiene_dementia.html.sig">[View GPG Signature]</a>
-        </div>
+        <a href="/oral_hygiene_dementia.html">Oral Hygiene for Dementia — Beyond Brushing</a>
     </div>
 
-    <h2>Agent Transparency</h2>
-    <p>This domain is agent-friendly. See <a href="/ai.json">ai.json</a> and <a href="/llms.txt">llms.txt</a> for routing. Public PGP Key <a href="/pgp_public_key.txt">here</a>.</p>
+    <!-- Machine-readable metadata moved off-screen per Strategy -->
+    <div class="agent-transparency">
+        <p>This domain is agent-friendly. See <a href="/ai.json">ai.json</a> and <a href="/llms.txt">llms.txt</a> for routing. Public PGP Key <a href="/pgp_public_key.txt">here</a>.</p>
+        <p>Formats: <a href="/oral_hygiene_dementia.pdf">[PDF]</a> | <a href="/oral_hygiene_dementia.json">[Computable JSON]</a> | Trust: <a href="/oral_hygiene_dementia.html.sig">[View GPG Signature]</a></p>
+    </div>
+
+    <div class="footer">
+        &copy; 2026 Helen Mulder. Focused on Neurological Regulation and Occupational Therapy.
+    </div>
 </body>
 </html>
