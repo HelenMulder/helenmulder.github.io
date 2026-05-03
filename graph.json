@@ -1,11 +1,11 @@
 {
   "@context": "https://protocol.helenmulder.com/schema/v1/library",
-  "library_last_updated": "2026-05-03T18:39:35.024292",
+  "library_last_updated": "2026-05-03T18:45:37.367150",
   "total_nodes": 2,
   "nodes": [
     {
       "slug": "gum_disease_alzheimers_link",
-      "title": "Gum Disease and the Cell Danger Response in Alzheimer's Disease",
+      "title": "Healthy Mouth, Healthy Brain",
       "date": "2024-05-03",
       "description": "Exploring the link between oral hygiene and dementia.",
       "tags": [
@@ -45,9 +45,9 @@
   "taxonomy": {
     "tags": [
       "biofilm",
+      "toxins",
       "dementia",
-      "amyloid",
-      "toxins"
+      "amyloid"
     ],
     "categories": [
       "Protocols",
