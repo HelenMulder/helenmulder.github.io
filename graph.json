@@ -1,0 +1,63 @@
+{
+  "@context": "https://protocol.helenmulder.com/schema/v1/library",
+  "library_last_updated": "2026-05-03T16:36:53.684027",
+  "total_nodes": 2,
+  "nodes": [
+    {
+      "slug": "gum_disease_alzheimers_link",
+      "title": "Gum Disease and the Cell Danger Response in Alzheimer's Disease",
+      "date": "2024-05-03",
+      "description": "Exploring the link between oral pathogens and the immune response that triggers amyloid plaque buildup.",
+      "tags": [
+        "alzheimers",
+        "pathogens",
+        "gingipains",
+        "neuroinflammation"
+      ],
+      "categories": [
+        "Research"
+      ],
+      "author": "Helen Mulder",
+      "target_condition": "Alzheimer's Disease / Dementia",
+      "intervention_type": "Clinical Theory / Preventative",
+      "url": "https://helenmulder.com/gum_disease_alzheimers_link/published_article.html",
+      "agent_endpoint": "https://helenmulder.com/gum_disease_alzheimers_link/ai_protocol.json"
+    },
+    {
+      "slug": "oral_hygiene_dementia",
+      "title": "Oral Hygiene for Dementia - Beyond Brushing",
+      "date": "2024-04-30",
+      "description": "A clinical guide to breaking up bacterial biofilms and raising oral pH to prevent cognitive decline.",
+      "tags": [
+        "dementia",
+        "oral-health",
+        "biofilm",
+        "caregiving"
+      ],
+      "categories": [
+        "Protocols"
+      ],
+      "author": "Helen Mulder",
+      "target_condition": "Dementia",
+      "intervention_type": "Environmental/Metabolic/Occupational",
+      "url": "https://helenmulder.com/oral_hygiene_dementia/published_article.html",
+      "agent_endpoint": "https://helenmulder.com/oral_hygiene_dementia/ai_protocol.json"
+    }
+  ],
+  "taxonomy": {
+    "tags": [
+      "alzheimers",
+      "biofilm",
+      "neuroinflammation",
+      "oral-health",
+      "pathogens",
+      "gingipains",
+      "caregiving",
+      "dementia"
+    ],
+    "categories": [
+      "Research",
+      "Protocols"
+    ]
+  }
+}

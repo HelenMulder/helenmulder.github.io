@@ -3,50 +3,252 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Helen Mulder OT | Dementia Protocols</title>
+    <title>Helen Mulder OT | Clinical Library</title>
+    <!-- Parasympathetic Design System -->
     <style>
-        body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #1a1a1a; line-height: 1.6; max-width: 800px; margin: 0 auto; padding: 40px 20px; }
-        h1 { color: #2c3e50; border-bottom: 2px solid #ecf0f1; padding-bottom: 10px; }
-        .protocol-card { background: #f8f9fa; padding: 20px; border-radius: 8px; margin-bottom: 20px; border-left: 4px solid #3498db; }
-        a { color: #2980b9; text-decoration: none; font-weight: bold; }
-        .metadata { font-size: 0.85em; color: #7f8c8d; font-family: monospace; margin-top: 10px; }
+        :root {
+            --bg-color: #fdfdfc;
+            --text-main: #2c3e50;
+            --text-fade: #7f8c8d;
+            --accent-blue: #3498db;
+            --accent-blue-hover: #2980b9;
+            --card-bg: #ffffff;
+            --card-border: #ecf0f1;
+            --tag-bg: #f0f2f5;
+            --tag-text: #555;
+            --tag-active-bg: #3498db;
+            --tag-active-text: #ffffff;
+        }
+        
+        body { 
+            font-family: 'Georgia', serif; /* Clinical, grounded, trustworthy */
+            color: var(--text-main); 
+            line-height: 1.6; 
+            max-width: 800px; 
+            margin: 0 auto; 
+            padding: 40px 20px; 
+            background-color: var(--bg-color);
+        }
+        
+        h1, h2, h3 { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color: var(--text-main); letter-spacing: -0.5px; }
+        h1 { border-bottom: 2px solid var(--card-border); padding-bottom: 10px; margin-bottom: 5px; }
+        .subtitle { font-style: italic; color: var(--text-fade); margin-top: 0; margin-bottom: 30px; font-size: 1.1em; }
+        
+        a { color: var(--accent-blue-hover); text-decoration: none; font-weight: 600; transition: color 0.2s ease; }
+        a:hover { color: var(--text-main); text-decoration: underline; text-underline-offset: 3px; }
+
+        /* Dashboard & Filtering UI */
+        .dashboard {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 8px;
+            padding: 24px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+        }
+        
+        .dashboard-row { margin-bottom: 15px; }
+        .dashboard-label { font-family: 'Helvetica Neue', sans-serif; font-size: 0.85em; font-weight: bold; text-transform: uppercase; color: var(--text-fade); letter-spacing: 0.05em; display: block; margin-bottom: 8px; }
+        
+        .filter-btn {
+            background: var(--tag-bg);
+            color: var(--tag-text);
+            border: none;
+            padding: 6px 12px;
+            border-radius: 16px;
+            font-size: 0.85em;
+            margin: 0 6px 8px 0;
+            cursor: pointer;
+            font-family: 'Helvetica Neue', sans-serif;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+        
+        .filter-btn:hover { background: #e2e6ea; }
+        .filter-btn.active { background: var(--tag-active-bg); color: var(--tag-active-text); box-shadow: 0 2px 4px rgba(52, 152, 219, 0.2); }
+
+        /* Article Cards */
+        .article-entry { 
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 8px;
+            padding: 24px;
+            margin-bottom: 24px; 
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .article-entry:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.04);
+        }
+        
+        .article-title { font-size: 1.4em; color: var(--accent-blue-hover); display: block; margin-bottom: 8px; line-height: 1.3; }
+        .article-desc { color: var(--text-main); margin-bottom: 16px; font-size: 1.05em; }
+        
+        .meta-footer { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center;
+            border-top: 1px solid var(--card-border);
+            padding-top: 16px;
+            margin-top: 16px;
+            font-family: 'Helvetica Neue', sans-serif;
+        }
+        
+        .meta-info { font-size: 0.85em; color: var(--text-fade); }
+        .category-badge { color: var(--text-main); font-weight: bold; text-transform: uppercase; font-size: 0.75em; letter-spacing: 0.05em; margin-right: 10px; }
+        .tags-inline .tag { background: none; color: var(--accent-blue); padding: 0; margin-right: 8px; font-size: 0.85em; }
+
+        /* Newsletter CTA */
+        .newsletter-box { 
+            background: #f4f6f7; 
+            padding: 24px; 
+            border-radius: 8px; 
+            margin: 40px 0; 
+            border-left: 4px solid var(--accent-blue-hover);
+            font-family: 'Helvetica Neue', sans-serif;
+            text-align: center;
+        }
+        
+        .no-results { text-align: center; padding: 40px; color: var(--text-fade); font-style: italic; display: none; }
+        
+        /* Hidden Agent Metadata */
+        .agent-layer { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
     </style>
 </head>
 <body>
     <h1>Helen Mulder OT</h1>
-    <p>I'm Helen, occupational therapist and dementia prevention and care strategist. This website is a hub for my public writing and resources.</p>
-    
-    <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin: 30px 0; border-left: 4px solid #2c3e50;">
-        <strong>Don't miss the latest</strong><br>
-        I send one article every week. Sign up to get it via e-mail here. 
-        <a href="https://helen-mulder.ghost.io/#/portal/signup" style="color: #2980b9; font-weight: bold; text-decoration: underline;">Join the free weekly newsletter here.</a>
-    </div>
+    <p class="subtitle">Occupational Therapist & Clinical Librarian. Architecting knowledge for dementia care.</p>
 
-    <h2>Published Articles</h2>
-    
-    <div class="protocol-card">
-        <a href="/gum_disease_alzheimers_link.html">Gum Disease and the Cell Danger Response in Alzheimer's Disease</a>
-    <div style="position: absolute; left: -9999px;">
-        <div class="metadata">
-            Formats: <a href="/gum_disease_alzheimers_link.pdf">[PDF]</a> | <a href="/gum_disease_alzheimers_link.json">[Computable JSON]</a><br>
-            Trust: <a href="/gum_disease_alzheimers_link.html.sig">[View GPG Signature]</a>
+    <!-- Interactive Navigation Dashboard -->
+    <div class="dashboard">
+        <div class="dashboard-row" id="categories-container">
+            <span class="dashboard-label">View By Category</span>
+            <button class="filter-btn active" data-filter-type="category" data-filter-val="all">All</button>
+            <button class="filter-btn" data-filter-type="category" data-filter-val="Protocols">Protocols</button>
+            <button class="filter-btn" data-filter-type="category" data-filter-val="Research">Research</button>
+        </div>
+        <div class="dashboard-row" id="tags-container">
+            <span class="dashboard-label">Filter By Clinical Marker</span>
+            <button class="filter-btn" data-filter-type="tag" data-filter-val="alzheimers">#alzheimers</button>
+            <button class="filter-btn" data-filter-type="tag" data-filter-val="biofilm">#biofilm</button>
+            <button class="filter-btn" data-filter-type="tag" data-filter-val="caregiving">#caregiving</button>
+            <button class="filter-btn" data-filter-type="tag" data-filter-val="dementia">#dementia</button>
+            <button class="filter-btn" data-filter-type="tag" data-filter-val="gingipains">#gingipains</button>
+            <button class="filter-btn" data-filter-type="tag" data-filter-val="neuroinflammation">#neuroinflammation</button>
+            <button class="filter-btn" data-filter-type="tag" data-filter-val="oral-health">#oral-health</button>
+            <button class="filter-btn" data-filter-type="tag" data-filter-val="pathogens">#pathogens</button>
         </div>
     </div>
-    </div>
 
-    <div class="protocol-card">
-        <a href="/oral_hygiene_dementia.html">Oral Hygiene for Dementia - Beyond Brushing</a>
-    <div style="position: absolute; left: -9999px;">
-        <div class="metadata">
-            Formats: <a href="/oral_hygiene_dementia.pdf">[PDF]</a> | <a href="/oral_hygiene_dementia.json">[Computable JSON]</a><br>
-            Trust: <a href="/oral_hygiene_dementia.html.sig">[View GPG Signature]</a>
+    <!-- Article Library -->
+    <div id="library">
+        
+        <div class="article-entry" data-categories="Research" data-tags="alzheimers,pathogens,gingipains,neuroinflammation">
+            <a class="article-title" href="/gum_disease_alzheimers_link/published_article.html">Gum Disease and the Cell Danger Response in Alzheimer's Disease</a>
+            <p class="article-desc">Exploring the link between oral pathogens and the immune response that triggers amyloid plaque buildup.</p>
+            <div class="meta-footer">
+                <div>
+                    <span class="category-badge">Research</span>
+                    <span class="tags-inline"><span class="tag">#alzheimers</span><span class="tag">#pathogens</span><span class="tag">#gingipains</span><span class="tag">#neuroinflammation</span></span>
+                </div>
+                <div class="meta-info">2024-05-03</div>
+            </div>
         </div>
-    </div>
+        
+        
+        <div class="article-entry" data-categories="Protocols" data-tags="dementia,oral-health,biofilm,caregiving">
+            <a class="article-title" href="/oral_hygiene_dementia/published_article.html">Oral Hygiene for Dementia - Beyond Brushing</a>
+            <p class="article-desc">A clinical guide to breaking up bacterial biofilms and raising oral pH to prevent cognitive decline.</p>
+            <div class="meta-footer">
+                <div>
+                    <span class="category-badge">Protocols</span>
+                    <span class="tags-inline"><span class="tag">#dementia</span><span class="tag">#oral-health</span><span class="tag">#biofilm</span><span class="tag">#caregiving</span></span>
+                </div>
+                <div class="meta-info">2024-04-30</div>
+            </div>
+        </div>
+        
+        <div id="no-results" class="no-results">No protocols found matching this filter. Try clearing your selection.</div>
     </div>
 
-    <div style="position: absolute; left: -9999px;">
-        <h2>Agent Transparency</h2>
-        <p>This domain is agent-friendly. See <a href="/ai.json">ai.json</a> and <a href="/llms.txt">llms.txt</a> for routing. Public PGP Key <a href="/pgp_public_key.txt">here</a>.</p>
+    <!-- Conversion & Discovery -->
+    <div class="newsletter-box">
+        <h3 style="margin-top:0;">Weekly Research Signals</h3>
+        <p style="margin-bottom: 20px;">Receive deep-dive clinical protocols and environmental interventions directly in your inbox.</p>
+        <a href="https://helen-mulder.ghost.io/#/portal/signup" style="display:inline-block; background: var(--accent-blue-hover); color: white; padding: 10px 24px; border-radius: 4px; font-weight: bold;">Subscribe to the Library</a>
     </div>
+
+    <!-- The Agent Layer (Machine Readable Substrate) -->
+    <div class="agent-layer">
+        <h2>Agent Routing Substrate</h2>
+        <p>This UI is rendered over a machine-readable knowledge graph.</p>
+        <ul>
+            <li>Global Graph: <a href="/graph.json" rel="alternate" type="application/json">graph.json</a></li>
+            <li>Agent Routing: <a href="/ai.json">ai.json</a></li>
+            <li>LLM Standard: <a href="/llms.txt">llms.txt</a></li>
+            <li>Verification: <a href="/pgp_public_key.txt">Helen Mulder's Public PGP Key</a></li>
+        </ul>
+    </div>
+
+    <!-- Frictionless UI Logic -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const articles = document.querySelectorAll('.article-entry');
+            const btns = document.querySelectorAll('.filter-btn');
+            const noResults = document.getElementById('no-results');
+            
+            let currentCategory = 'all';
+            let currentTag = null; // null means no active tag filter
+
+            function render() {
+                let visibleCount = 0;
+                
+                articles.forEach(art => {
+                    const artCats = art.dataset.categories.split(',');
+                    const artTags = art.dataset.tags.split(',');
+                    
+                    // Logic: Must match category AND (if set) tag.
+                    const matchCat = (currentCategory === 'all' || artCats.includes(currentCategory));
+                    const matchTag = (!currentTag || artTags.includes(currentTag));
+                    
+                    if (matchCat && matchTag) {
+                        art.style.display = 'block';
+                        visibleCount++;
+                    } else {
+                        art.style.display = 'none';
+                    }
+                });
+                
+                noResults.style.display = (visibleCount === 0) ? 'block' : 'none';
+            }
+
+            btns.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const type = btn.dataset.filterType;
+                    const val = btn.dataset.filterVal;
+                    
+                    if (type === 'category') {
+                        // Toggle category logic
+                        currentCategory = val;
+                        // Manage active styling for categories
+                        document.querySelectorAll('.filter-btn[data-filter-type="category"]').forEach(b => b.classList.remove('active'));
+                        btn.classList.add('active');
+                    } else if (type === 'tag') {
+                        // Toggle tag logic (can turn off)
+                        if (currentTag === val) {
+                            currentTag = null;
+                            btn.classList.remove('active');
+                        } else {
+                            currentTag = val;
+                            document.querySelectorAll('.filter-btn[data-filter-type="tag"]').forEach(b => b.classList.remove('active'));
+                            btn.classList.add('active');
+                        }
+                    }
+                    
+                    render();
+                });
+            });
+        });
+    </script>
 </body>
 </html>
