@@ -3,10 +3,10 @@
   "type": "ClinicalProtocol",
   "author": "Helen Mulder OT",
   "version": "1.0",
-  "last_verified": "2026-05-03T22:26:20.982620+00:00",
-  "title": "Gum Disease Alzheimers Link",
-  "target_condition": "Dementia",
-  "intervention_type": "Metabolic",
+  "last_verified": "2026-05-03T22:39:32.905205+00:00",
+  "title": "Gum Disease and the Cell Danger Response in Alzheimer's Disease",
+  "target_condition": "Alzheimer's Disease / Dementia",
+  "intervention_type": "Clinical Theory / Preventative",
   "actions": [
     {
       "type": "payment_request",
@@ -17,9 +17,19 @@
       "description": "Reserve a 30m Protocol Review Consultation"
     }
   ],
-  "computable_logic": {
-    "description": "Machine-readable instructions derived from the text.",
-    "interventions": []
-  },
-  "source_text": "\n---\ntitle: Gum Disease and the Cell Danger Response in Alzheimer's Disease\nauthor: Helen Mulder\ndate: 2024-05-03\ncategories: [\"Research\"]\ntags: [\"dementia\", \"toxins\", \"amyloid\", \"biofilm\"]\ndescription: \"Exploring the link between oral hygiene and dementia.\"\ntype: ClinicalProtocol\ntarget_condition: Alzheimer's Disease / Dementia\n\nintervention_type: Clinical Theory / Preventative\nprotocol_logic:\n  - objective: \"Reduce Gingipain toxin arrival to the brain by managing oral microbiome.\"\n  - mechanism: \"Amyloid peptides deposit as an immune response to neutralize oral toxins (Gingipains).\"\n  - risk_factor: \"Low energy brain state prevents microglial cleanup of amyloid debris.\"\n  - intervention: \"Maintain alkaline oral pH and biofilm disruption.\"\n---\n\n# Gum Disease and the Cell Danger Response in Alzheimer's Disease\n\nGingivalis - The same bacteria responsible for gum disease (gingivitis) are toxic to the brain. An abundance of this bacteria can generate toxic enzymes (gingipains), which can reach the brain and trigger dementia symptoms.\n\n## In a healthy brain\n* **Toxins arrive:** Gingipain toxins reach the brain.\n* **Immune Response:** The brain begins a cell danger response and deploys amyloid peptides as a sticky \u201cnet\u201d to trap and neutralize the toxins.\n* **Cleanup:** Brain microglia (the immune system\u2019s janitor cells) digest the amyloid-trapped debris.\n* **Restoration:** Debris are flushed out via brain fluid during deep sleep.\n* **Baseline:** The brain returns to normal operations.\n\n## In a low energy brain \n* **Toxins arrive:** Gingipain toxins reach the brain.\n* **Immune Response:** The brain begins a cell danger response and deploys amyloid proteins as a sticky \u201cnet\u201d to trap and neutralize the toxins.\n* **Failure to Clean:** Because the brain lacks energy, brain microglia (janitor cells) are too sluggish to digest the debris.\n* **Accumulation:** The trapped toxins and amyloid remain stagnant and build up in the brain, clumping together into plaques.\n* **Chronic Loop:** The cell danger response remains stuck in a chronic, damaging loop.\n\n## The bottom line\nGum disease can be a trigger for Alzheimer\u2019s disease in a low-energy brain. Maintaining an oral hygiene routine focused on raising the pH of the mouth (more alkaline) and breaking up plaque (biofilm) significantly reduces the toxic burden on the brain, which can prevent the worsening of cognitive decline. \n\nBy keeping your mouth healthy, you can prevent the worsening of cognitive decline and give the brain a break from toxins, freeing up its resources for rest, repair, and daily activity.\n"
+  "computable_logic": [
+    {
+      "objective": "Reduce Gingipain toxin arrival to the brain by managing oral microbiome."
+    },
+    {
+      "mechanism": "Amyloid peptides deposit as an immune response to neutralize oral toxins (Gingipains)."
+    },
+    {
+      "risk_factor": "Low energy brain state prevents microglial cleanup of amyloid debris."
+    },
+    {
+      "intervention": "Maintain alkaline oral pH and biofilm disruption."
+    }
+  ],
+  "source_text": "# Gum Disease and the Cell Danger Response in Alzheimer's Disease\n\nGingivalis - The same bacteria responsible for gum disease (gingivitis) are toxic to the brain. An abundance of this bacteria can generate toxic enzymes (gingipains), which can reach the brain and trigger dementia symptoms.\n\n## In a healthy brain\n* **Toxins arrive:** Gingipain toxins reach the brain.\n* **Immune Response:** The brain begins a cell danger response and deploys amyloid peptides as a sticky \u201cnet\u201d to trap and neutralize the toxins.\n* **Cleanup:** Brain microglia (the immune system\u2019s janitor cells) digest the amyloid-trapped debris.\n* **Restoration:** Debris are flushed out via brain fluid during deep sleep.\n* **Baseline:** The brain returns to normal operations.\n\n## In a low energy brain \n* **Toxins arrive:** Gingipain toxins reach the brain.\n* **Immune Response:** The brain begins a cell danger response and deploys amyloid proteins as a sticky \u201cnet\u201d to trap and neutralize the toxins.\n* **Failure to Clean:** Because the brain lacks energy, brain microglia (janitor cells) are too sluggish to digest the debris.\n* **Accumulation:** The trapped toxins and amyloid remain stagnant and build up in the brain, clumping together into plaques.\n* **Chronic Loop:** The cell danger response remains stuck in a chronic, damaging loop.\n\n## The bottom line\nGum disease can be a trigger for Alzheimer\u2019s disease in a low-energy brain. Maintaining an oral hygiene routine focused on raising the pH of the mouth (more alkaline) and breaking up plaque (biofilm) significantly reduces the toxic burden on the brain, which can prevent the worsening of cognitive decline. \n\nBy keeping your mouth healthy, you can prevent the worsening of cognitive decline and give the brain a break from toxins, freeing up its resources for rest, repair, and daily activity."
 }
