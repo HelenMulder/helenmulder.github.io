@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+Sitemap: https://helenmulder.com/sitemap.xml
+
+User-agent: GPTBot
+Allow: /
+Sitemap: https://helenmulder.com/sitemap.xml
+
+User-agent: ClaudeBot
+Allow: /
+Sitemap: https://helenmulder.com/sitemap.xml
