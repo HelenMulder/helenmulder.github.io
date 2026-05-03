@@ -1,6 +1,6 @@
 {
   "@context": "https://protocol.helenmulder.com/schema/v1/library",
-  "library_last_updated": "2026-05-03T17:30:27.248422",
+  "library_last_updated": "2026-05-03T17:37:43.496069",
   "total_nodes": 2,
   "nodes": [
     {
@@ -44,10 +44,10 @@
   ],
   "taxonomy": {
     "tags": [
-      "amyloid",
-      "toxins",
       "biofilm",
-      "dementia"
+      "amyloid",
+      "dementia",
+      "toxins"
     ],
     "categories": [
       "Protocols",
