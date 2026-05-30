@@ -1,74 +1,100 @@
-<!DOCTYPE html><html><head>
-<title>Helen Mulder OT</title>
+<!DOCTYPE html><html><head><title>Helen Mulder OT</title>
 <style>
-      body { font-family: Georgia, serif; max-width: 800px; margin: 36px auto; padding: 0 20px 60px; line-height: 1.74; color: rgba(0,0,0,0.95); background: #f6f5f4; overflow-wrap: break-word; }
-      .site-header { margin-bottom: 18px; }
-      .site-header h1 { margin: 0; border-bottom: 2px solid #e7e3de; padding-bottom: 10px; color: #2c3e50; letter-spacing: 0.2px; }
-      .site-header p { margin: 8px 0 0; color: #615d59; font-style: italic; }
-      .series { margin-top: 30px; }
-      .series h2 { color: #2c3e50; font-family: Helvetica, Arial, sans-serif; margin-bottom: 14px; border-left: 4px solid #2980b9; padding-left: 10px; }
-      .article-item { background: #ffffff; margin-bottom: 14px; padding: 14px; border: 1px solid #e7e3de; border-radius: 10px; }
-      .article-item h3 { margin: 0 0 4px; font-size: 1.2rem; }
-      a { color: #2980b9; text-decoration: none; font-weight: bold; }
-      a:hover { text-decoration: underline; }
-      .meta { color: #615d59; font-size: 0.9em; }
-      .description { margin: 5px 0 6px; }
-      .subscribe-strip { margin-top: 24px; background: #ffffff; border: 1px solid #e7e3de; border-radius: 10px; padding: 14px; }
-      .subscribe-title { font-weight: 700; margin-bottom: 8px; }
-      .subscribe-row { display:flex; gap:8px; flex-wrap:wrap; }
-      .subscribe-row input { padding:9px 10px; border:1px solid #e7e3de; border-radius:7px; min-width: 220px; }
-      .subscribe-row button { background:#2980b9; color:white; border:none; border-radius:7px; padding:9px 14px; cursor:pointer; }
-      .small { color: #615d59; font-size: .92em; }
-      .site-footer { margin-top: 26px; padding-top: 16px; border-top: 1px solid #e7e3de; }
-      .links a { font-weight: 600; }
-    </style>
-</head><body>
-<div class="site-header">
-  <h1>Helen Mulder OT</h1>
-  <p>Neuro-metabolic rehabilitation occupational therapist</p>
-</div>
-<section class="series"><h2><a href="/series/immune-drain/index.html">Immune Drain Series</a></h2>
-<div class="article-item"><h3><a href="/constipation-prevention-dementia/published_article.html">Preventing Constipation for Dementia</a></h3><p class="description">A guide to dementia-friendly strategies for preventing constipation.</p><div class="meta">Published 2026-05-30 · Updated 2026-05-30</div></div>
-<div class="article-item"><h3><a href="/gum_disease_alzheimers_link/published_article.html">Healthy Mouth, Healthy Brain</a></h3><p class="description">Exploring the link between oral hygiene and dementia.</p><div class="meta">Published 2026-01-01 · Updated 2026-01-01</div></div>
-<div class="article-item"><h3><a href="/oral_hygiene_dementia/published_article.html">Oral Hygiene for Dementia - Beyond Brushing</a></h3><p class="description">A guide to dementia-friendly strategies for toothbrushing and other oral hygiene solutions.</p><div class="meta">Published 2026-01-01 · Updated 2026-01-01</div></div>
+:root { --accent: #2f6f86; }
+body { font-family: Georgia, serif; max-width: 800px; margin: 36px auto; padding: 0 20px 60px; line-height: 1.74; color: rgba(0,0,0,0.95); background: #f6f5f4; }
+a { color: var(--accent); text-decoration: none; font-weight: 700; }
+a:hover { text-decoration: underline; }
+h1,h2,h3 { color:#2c3e50; }
+.card { background:#ffffff; border:1px solid #e7e3de; border-radius:10px; padding:14px; margin-bottom:12px; }
+.meta,.small { color:#615d59; font-size:.92em; }
+.topnav { margin-bottom:18px; }
+.subscribe-strip { margin-top: 24px; background: #ffffff; border: 1px solid #e7e3de; border-left: 4px solid var(--accent); border-radius: 10px; padding: 14px; }
+.subscribe-title { font-weight:700; margin-bottom:8px; }
+.subscribe-row { display:flex; gap:8px; flex-wrap:wrap; }
+.subscribe-row input { padding:9px 10px; border:1px solid #e7e3de; border-radius:7px; min-width:220px; }
+.subscribe-row button { background:var(--accent); color:#fff; border:none; border-radius:7px; padding:9px 14px; cursor:pointer; }
+.site-footer { margin-top: 26px; padding-top: 16px; border-top: 1px solid #e7e3de; }
+
+.series h2 { border-left: 4px solid var(--series-accent); padding-left: 10px; }
+</style></head><body>
+<h1>Helen Mulder OT</h1>
+<p class='meta'>Neuro-metabolic rehabilitation occupational therapist</p>
+<section class='series' style='--series-accent:#4e8b7a'>
+<h2><a href='/series/immune-drain/index.html'>Immune Drain Series</a></h2>
+<div class='card' style='border-left:4px solid #4e8b7a'><h3><a href='/constipation-prevention-dementia/published_article.html'>Preventing Constipation for Dementia</a></h3><p>A guide to dementia-friendly strategies for preventing constipation.</p><div class='meta'>Published 2026-05-30 · Updated 2026-05-30</div></div>
+<div class='card' style='border-left:4px solid #4e8b7a'><h3><a href='/gum_disease_alzheimers_link/published_article.html'>Healthy Mouth, Healthy Brain</a></h3><p>Exploring the link between oral hygiene and dementia.</p><div class='meta'>Published 2026-01-01 · Updated 2026-01-01</div></div>
+<div class='card' style='border-left:4px solid #4e8b7a'><h3><a href='/oral_hygiene_dementia/published_article.html'>Oral Hygiene for Dementia - Beyond Brushing</a></h3><p>A guide to dementia-friendly strategies for toothbrushing and other oral hygiene solutions.</p><div class='meta'>Published 2026-01-01 · Updated 2026-01-01</div></div>
 </section>
-<section class="series"><h2><a href="/series/signal-safety/index.html">Signal Safety Series</a></h2>
-<p class="description">Coming soon.</p>
+<section class='series' style='--series-accent:#6e7fb8'>
+<h2><a href='/series/signal-safety/index.html'>Signal Safety Series</a></h2>
+<p class='meta'>Coming soon.</p>
 </section>
-<section class="series"><h2><a href="/recipes/index.html">Recipe Library</a></h2>
-<p class="description">Browse recipes extracted from clinical articles, formatted with standard ingredients and step-by-step instructions.</p>
+<section class='series' style='--series-accent:#b8825a'><h2><a href='/recipes/index.html'>Recipe Library</a></h2><p>Browse recipes extracted from clinical articles with standard ingredients and step-by-step instructions.</p></section>
+
+<section class="subscribe-strip" aria-label="Subscribe"> 
+  <div class="subscribe-title">Get new articles by email</div>
+  <div class="subscribe-row">
+    <input id="hm-sub-email-home" type="email" placeholder="your@email.com" aria-label="Email address" />
+    <button onclick="hmSubscribe('hm-sub-email-home', 'hm-sub-email-home-status')">Subscribe</button>
+  </div>
+  <p id="hm-sub-email-home-status" class="small">Unobtrusive by design. If automation is unavailable, this falls back to email.</p>
 </section>
 
-    <section class="subscribe-strip" aria-label="Subscribe">
-      <div class="subscribe-title">Get new articles by email</div>
-      <div class="subscribe-row">
-        <input id="hm-sub-email" type="email" placeholder="your@email.com" aria-label="Email address" />
-        <button onclick="hmSubscribe('hm-sub-email')">Subscribe</button>
-      </div>
-      <p class="small">No platform account needed. This opens your email app addressed to Helen.</p>
-    </section>
-    
 
-    <footer class="site-footer">
-      <div><strong>Helen Mulder OT</strong></div>
-      <div class="small">Neuro-metabolic rehabilitation occupational therapist</div>
-      <div class="small">Contact: <a href="mailto:helenjmulder@gmail.com">helenjmulder@gmail.com</a></div>
-      <div class="small links"><a href="/">Home</a> · <a href="/recipes/index.html">Recipe Library</a> · <a href="/series/immune-drain/index.html">Immune Drain</a> · <a href="/series/signal-safety/index.html">Signal Safety</a></div>
-    </footer>
-    
+<footer class="site-footer">
+  <div><strong>Helen Mulder OT</strong></div>
+  <div class="small">Neuro-metabolic rehabilitation occupational therapist</div>
+  <div class="small">Contact: <a href="mailto:helenjmulder@gmail.com">helenjmulder@gmail.com</a></div>
+  <div class="small links"><a href="/">Home</a> · <a href="/recipes/index.html">Recipe Library</a> · <a href="/series/immune-drain/index.html">Immune Drain</a> · <a href="/series/signal-safety/index.html">Signal Safety</a></div>
+</footer>
 
-    <script>
-      function hmSubscribe(inputId) {
-        const el = document.getElementById(inputId);
-        const email = (el && el.value ? el.value.trim() : "");
-        const subject = encodeURIComponent("Subscribe - HelenMulder.com");
-        const body = encodeURIComponent(
-          "Please add me to new article alerts.\n" +
-          (email ? ("My email: " + email + "\n") : "") +
-          "(Sent from HelenMulder.com)"
-        );
-        window.location.href = "mailto:helenjmulder@gmail.com?subject=" + subject + "&body=" + body;
-      }
-    </script>
-    
+
+<script>
+  window.HM_SUBSCRIBE_ENDPOINT = null;
+  (async function() {
+    try {
+      const r = await fetch('/subscribe-config.json', {cache: 'no-store'});
+      if (!r.ok) return;
+      const cfg = await r.json();
+      if (cfg && cfg.endpoint) window.HM_SUBSCRIBE_ENDPOINT = cfg.endpoint;
+    } catch (_) {}
+  })();
+
+  function hmEmailFallback(email) {
+    const subject = encodeURIComponent('Subscribe - HelenMulder.com');
+    const body = encodeURIComponent('Please add me to new article alerts.\nMy email: ' + email + '\n(Source: ' + window.location.pathname + ')');
+    window.location.href = 'mailto:helenjmulder@gmail.com?subject=' + subject + '&body=' + body;
+  }
+
+  async function hmSubscribe(inputId, statusId) {
+    const input = document.getElementById(inputId);
+    const status = document.getElementById(statusId);
+    const email = input && input.value ? input.value.trim() : '';
+    if (!email || !/^\S+@\S+\.\S+$/.test(email)) {
+      if (status) status.textContent = 'Please enter a valid email.';
+      return;
+    }
+
+    if (!window.HM_SUBSCRIBE_ENDPOINT) {
+      if (status) status.textContent = 'Opening your email app to complete subscription...';
+      hmEmailFallback(email);
+      return;
+    }
+
+    try {
+      const res = await fetch(window.HM_SUBSCRIBE_ENDPOINT, {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({email, source: window.location.pathname, ts: new Date().toISOString()})
+      });
+      if (!res.ok) throw new Error('bad status');
+      if (status) status.textContent = 'Subscribed. Please check your inbox for confirmation.';
+      if (input) input.value = '';
+    } catch (_) {
+      if (status) status.textContent = 'Automated subscription unavailable. Opening email fallback...';
+      hmEmailFallback(email);
+    }
+  }
+</script>
+
 </body></html>

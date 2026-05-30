@@ -1,0 +1,5 @@
+{
+  "mode": "hybrid",
+  "endpoint": "",
+  "notes": "Set endpoint to your subscribe API URL to enable automated signup. Empty uses mailto fallback."
+}
