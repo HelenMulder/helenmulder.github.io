@@ -86,7 +86,7 @@ ul { padding-left: 1.2rem; }
 
   function hmEmailFallback(email) {
     const subject = encodeURIComponent('Subscribe - HelenMulder.com');
-    const body = encodeURIComponent('Please add me to new article alerts.\nMy email: ' + email + '\n(Source: ' + window.location.pathname + ')');
+    const body = encodeURIComponent('Please add me to new article alerts.\\nMy email: ' + email + '\\n(Source: ' + window.location.pathname + ')');
     window.location.href = 'mailto:helenjmulder@gmail.com?subject=' + subject + '&body=' + body;
   }
 
