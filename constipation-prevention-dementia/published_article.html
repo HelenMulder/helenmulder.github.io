@@ -150,7 +150,7 @@ ul { padding-left: 1.2rem; }
   <div><strong>Helen Mulder OT</strong></div>
   <div class="small">Neuro-metabolic rehabilitation occupational therapist</div>
   <div class="small">Contact: <a href="mailto:helenjmulder@gmail.com">helenjmulder@gmail.com</a></div>
-  <div class="small links"><a href="/">Home</a> · <a href="/recipes/index.html">Recipe Library</a> · <a href="/series/immune-drain/index.html">Immune Drain</a> · <a href="/series/signal-safety/index.html">Signal Safety</a></div>
+  <div class="small links"><a href="/">Home</a> · <a href="/recipes/index.html">Recipe Library</a> · <a href="/series/immune-drain/index.html">Immune Drain</a> · <a href="/series/signal-safety/index.html">Signal Safety</a> · <a href="/unsubscribe/index.html">Unsubscribe</a></div>
 </footer>
 
 <script>
@@ -164,13 +164,16 @@ ul { padding-left: 1.2rem; }
     } catch (_) {}
   })();
 
-  function hmEmailFallback(email) {
-    const subject = encodeURIComponent('Subscribe - HelenMulder.com');
-    const body = encodeURIComponent('Please add me to new article alerts.\\nMy email: ' + email + '\\n(Source: ' + window.location.pathname + ')');
+  function hmEmailFallback(email, mode) {
+    const subject = encodeURIComponent((mode === 'unsubscribe' ? 'Unsubscribe' : 'Subscribe') + ' - HelenMulder.com');
+    const body = encodeURIComponent(
+      (mode === 'unsubscribe' ? 'Please remove me from updates.\\n' : 'Please add me to new article alerts.\\n') +
+      'My email: ' + email + '\\n(Source: ' + window.location.pathname + ')'
+    );
     window.location.href = 'mailto:helenjmulder@gmail.com?subject=' + subject + '&body=' + body;
   }
 
-  async function hmSubscribe(inputId, statusId) {
+  async function hmPostSubscription(mode, inputId, statusId) {
     const input = document.getElementById(inputId);
     const status = document.getElementById(statusId);
     const email = input && input.value ? input.value.trim() : '';
@@ -181,21 +184,21 @@ ul { padding-left: 1.2rem; }
 
     if (!window.HM_SUBSCRIBE_ENDPOINT) {
       if (status) status.textContent = 'Opening your email app...';
-      hmEmailFallback(email);
+      hmEmailFallback(email, mode);
       return;
     }
 
+    const payload = JSON.stringify({action: mode, email, source: window.location.pathname, ts: new Date().toISOString()});
+
     try {
-      const payload = JSON.stringify({email, source: window.location.pathname, ts: new Date().toISOString()});
       const response = await fetch(window.HM_SUBSCRIBE_ENDPOINT, {
         method: 'POST',
         redirect: 'follow',
         headers: {'Content-Type': 'text/plain;charset=utf-8'},
         body: payload
       });
-
       if (!response.ok) throw new Error('http_' + response.status);
-      if (status) status.textContent = 'Thanks — you are subscribed.';
+      if (status) status.textContent = (mode === 'unsubscribe') ? 'You are unsubscribed.' : 'Thanks — you are subscribed.';
       if (input) input.value = '';
     } catch (_) {
       try {
@@ -203,15 +206,18 @@ ul { padding-left: 1.2rem; }
           method: 'POST',
           mode: 'no-cors',
           headers: {'Content-Type': 'text/plain;charset=utf-8'},
-          body: JSON.stringify({email, source: window.location.pathname, ts: new Date().toISOString()})
+          body: payload
         });
-        if (status) status.textContent = 'Thanks — you are subscribed.';
+        if (status) status.textContent = (mode === 'unsubscribe') ? 'You are unsubscribed.' : 'Thanks — you are subscribed.';
         if (input) input.value = '';
       } catch (_) {
         if (status) status.textContent = 'Opening your email app...';
-        hmEmailFallback(email);
+        hmEmailFallback(email, mode);
       }
     }
   }
+
+  async function hmSubscribe(inputId, statusId) { return hmPostSubscription('subscribe', inputId, statusId); }
+  async function hmUnsubscribe(inputId, statusId) { return hmPostSubscription('unsubscribe', inputId, statusId); }
 </script>
 <a class='floating-home' href='/'>Home</a></body></html>
