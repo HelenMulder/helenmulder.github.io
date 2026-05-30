@@ -2,6 +2,6 @@
   "mode": "hybrid",
   "provider": "google-apps-script",
   "sheet": "HelenMulder Subscribers",
-  "endpoint": "",
+  "endpoint": "https://script.google.com/macros/s/AKfycbxQfXd9ysSuMYZwVz1u4u-Fsei12Nw06kt1Nx8sTbXRhhvsA2DhaPPPPX2TqxV9J5Z-/exec",
   "notes": "Set endpoint to your subscribe API URL to enable automated signup. Empty uses mailto fallback."
 }

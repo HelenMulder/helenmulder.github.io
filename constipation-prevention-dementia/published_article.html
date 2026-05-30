@@ -180,13 +180,13 @@ ul { padding-left: 1.2rem; }
     }
 
     try {
-      const res = await fetch(window.HM_SUBSCRIBE_ENDPOINT, {
+      await fetch(window.HM_SUBSCRIBE_ENDPOINT, {
         method: 'POST',
-        headers: {'Content-Type': 'application/json'},
+        mode: 'no-cors',
+        headers: {'Content-Type': 'text/plain;charset=utf-8'},
         body: JSON.stringify({email, source: window.location.pathname, ts: new Date().toISOString()})
       });
-      if (!res.ok) throw new Error('bad status');
-      if (status) status.textContent = 'Subscribed. Please check your inbox for confirmation.';
+      if (status) status.textContent = 'Thanks — you are subscribed.';
       if (input) input.value = '';
     } catch (_) {
       if (status) status.textContent = 'Automated subscription unavailable. Opening email fallback...';
