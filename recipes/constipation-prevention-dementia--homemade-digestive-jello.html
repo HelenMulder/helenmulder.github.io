@@ -8,6 +8,7 @@ body {
   margin: 36px auto;
   padding: 0 20px 60px;
   line-height: 1.78;
+  font-size: 18px;
   color: #2e3130;
   background: #f6f5f4;
 }
@@ -20,13 +21,19 @@ h1,h2,h3 { color:#23343b; letter-spacing: .15px; }
 .series-panel { margin-top: 20px; background: #ffffff; border: 1px solid #e7e3de; border-radius: 14px; padding: 16px 16px 10px; box-shadow: 0 2px 14px rgba(35,52,59,0.04); }
 .series-kicker { font-family: Helvetica, Arial, sans-serif; text-transform: uppercase; font-size: .72rem; letter-spacing: .08em; color: var(--series-header); margin-bottom: 6px; }
 .series-title { margin: 0 0 6px; font-size: 1.34rem; }
-.series-sub { margin: 0 0 12px; color: #6e6a66; font-size: .98rem; }
 .article-item { background: #fff; border: 1px solid #e7e3de; border-radius: 12px; padding: 12px 13px; margin: 10px 0; }
 .article-item h3 { margin: 0 0 4px; font-size: 1.1rem; }
 .article-item p { margin: 0; }
 .card { background:#ffffff; border:1px solid #e7e3de; border-radius:12px; padding:14px; margin-bottom:12px; }
-.meta,.small { color:#6e6a66; font-size:.92em; }
+.meta,.small { color:#6e6a66; font-size:.98em; }
 .topnav { margin-bottom:18px; }
+@media (max-width: 780px) {
+  body { font-size: 20px; line-height: 1.85; padding: 0 16px 56px; }
+  .hero h1 { font-size: 2.25rem; }
+  .series-title { font-size: 1.5rem; }
+  .article-item h3 { font-size: 1.2rem; }
+  .subscribe-row input, .subscribe-row button { font-size: 1rem; }
+}
 .subscribe-strip { margin-top: 24px; background: #ffffff; border: 1px solid #e7e3de; border-left: 4px solid var(--series-header); border-radius: 10px; padding: 14px; }
 .subscribe-title { font-weight:700; margin-bottom:8px; }
 .subscribe-row { display:flex; gap:8px; flex-wrap:wrap; }
@@ -64,7 +71,7 @@ h1,h2,h3 { color:#23343b; letter-spacing: .15px; }
     <input id="hm-sub-email-recipe-constipation-prevention-dementia--homemade-digestive-jello" type="email" placeholder="your@email.com" aria-label="Email address" />
     <button onclick="hmSubscribe('hm-sub-email-recipe-constipation-prevention-dementia--homemade-digestive-jello', 'hm-sub-email-recipe-constipation-prevention-dementia--homemade-digestive-jello-status')">Subscribe</button>
   </div>
-  <p id="hm-sub-email-recipe-constipation-prevention-dementia--homemade-digestive-jello-status" class="small">Unobtrusive by design. If automation is unavailable, this falls back to email.</p>
+  <p id="hm-sub-email-recipe-constipation-prevention-dementia--homemade-digestive-jello-status" class="small" aria-live="polite"></p>
 </section>
 
 
@@ -103,23 +110,37 @@ h1,h2,h3 { color:#23343b; letter-spacing: .15px; }
     }
 
     if (!window.HM_SUBSCRIBE_ENDPOINT) {
-      if (status) status.textContent = 'Opening your email app to complete subscription...';
+      if (status) status.textContent = 'Opening your email app...';
       hmEmailFallback(email);
       return;
     }
 
     try {
-      await fetch(window.HM_SUBSCRIBE_ENDPOINT, {
+      const payload = JSON.stringify({email, source: window.location.pathname, ts: new Date().toISOString()});
+      const response = await fetch(window.HM_SUBSCRIBE_ENDPOINT, {
         method: 'POST',
-        mode: 'no-cors',
+        redirect: 'follow',
         headers: {'Content-Type': 'text/plain;charset=utf-8'},
-        body: JSON.stringify({email, source: window.location.pathname, ts: new Date().toISOString()})
+        body: payload
       });
+
+      if (!response.ok) throw new Error('http_' + response.status);
       if (status) status.textContent = 'Thanks — you are subscribed.';
       if (input) input.value = '';
     } catch (_) {
-      if (status) status.textContent = 'Automated subscription unavailable. Opening email fallback...';
-      hmEmailFallback(email);
+      try {
+        await fetch(window.HM_SUBSCRIBE_ENDPOINT, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: {'Content-Type': 'text/plain;charset=utf-8'},
+          body: JSON.stringify({email, source: window.location.pathname, ts: new Date().toISOString()})
+        });
+        if (status) status.textContent = 'Thanks — you are subscribed.';
+        if (input) input.value = '';
+      } catch (_) {
+        if (status) status.textContent = 'Opening your email app...';
+        hmEmailFallback(email);
+      }
     }
   }
 </script>
