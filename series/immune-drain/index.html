@@ -1,18 +1,57 @@
 <!DOCTYPE html><html><head>
 <title>Immune Drain Series | Helen Mulder OT</title>
 <style>
-    body { font-family: Georgia, serif; max-width: 760px; margin: 40px auto; padding: 0 20px; line-height: 1.65; color: #1a1a1a; }
+    body { font-family: Georgia, serif; max-width: 780px; margin: 40px auto; padding: 0 20px 60px; line-height: 1.7; color: rgba(0,0,0,0.95); background: #f6f5f4; }
     h1 { color: #2c3e50; margin-bottom: 6px; }
-    .sub { color: #566573; margin-bottom: 22px; }
-    .card { border: 1px solid #ecf0f1; border-radius: 8px; padding: 16px; margin-bottom: 16px; }
+    .sub { color: #615d59; margin-bottom: 22px; }
+    .card { background: #ffffff; border: 1px solid #e7e3de; border-radius: 10px; padding: 16px; margin-bottom: 16px; }
     a { color: #2980b9; font-weight: 700; text-decoration: none; }
     a:hover { text-decoration: underline; }
     .topnav { margin-bottom: 20px; }
+    .small { color: #615d59; font-size: .92em; }
+    .subscribe-strip { margin-top: 24px; background: #ffffff; border: 1px solid #e7e3de; border-radius: 10px; padding: 14px; }
+    .subscribe-row { display:flex; gap:8px; flex-wrap:wrap; }
+    .subscribe-row input { padding:9px 10px; border:1px solid #e7e3de; border-radius:7px; min-width: 220px; }
+    .subscribe-row button { background:#2980b9; color:white; border:none; border-radius:7px; padding:9px 14px; cursor:pointer; }
+    .site-footer { margin-top: 26px; padding-top: 16px; border-top: 1px solid #e7e3de; }
     </style></head><body>
-<div class="topnav"><a href="/">Home</a> · <a href="/recipes/index.html">Recipes</a></div>
+<div class="topnav"><a href="/">Home</a> · <a href="/recipes/index.html">Recipe Library</a></div>
 <h1>Immune Drain Series</h1>
 <p class="sub">Clinical articles in this series.</p>
-<div class="card"><h3><a href="/constipation-prevention-dementia/published_article.html">Preventing Constipation for Dementia</a></h3><p>A guide to dementia-friendly strategies for preventing constipation.</p><div style="color:#7f8c8d;font-size:0.9em;">Published 2026-05-30</div></div>
-<div class="card"><h3><a href="/gum_disease_alzheimers_link/published_article.html">Healthy Mouth, Healthy Brain</a></h3><p>Exploring the link between oral hygiene and dementia.</p><div style="color:#7f8c8d;font-size:0.9em;">Published 2026-01-01</div></div>
-<div class="card"><h3><a href="/oral_hygiene_dementia/published_article.html">Oral Hygiene for Dementia - Beyond Brushing</a></h3><p>A guide to dementia-friendly strategies for toothbrushing and other oral hygiene solutions.</p><div style="color:#7f8c8d;font-size:0.9em;">Published 2026-01-01</div></div>
+<div class="card"><h3><a href="/constipation-prevention-dementia/published_article.html">Preventing Constipation for Dementia</a></h3><p>A guide to dementia-friendly strategies for preventing constipation.</p><div class="small">Published 2026-05-30 · Updated 2026-05-30</div></div>
+<div class="card"><h3><a href="/gum_disease_alzheimers_link/published_article.html">Healthy Mouth, Healthy Brain</a></h3><p>Exploring the link between oral hygiene and dementia.</p><div class="small">Published 2026-01-01 · Updated 2026-01-01</div></div>
+<div class="card"><h3><a href="/oral_hygiene_dementia/published_article.html">Oral Hygiene for Dementia - Beyond Brushing</a></h3><p>A guide to dementia-friendly strategies for toothbrushing and other oral hygiene solutions.</p><div class="small">Published 2026-01-01 · Updated 2026-01-01</div></div>
+
+    <section class="subscribe-strip" aria-label="Subscribe">
+      <div class="subscribe-title">Get new articles by email</div>
+      <div class="subscribe-row">
+        <input id="hm-sub-email" type="email" placeholder="your@email.com" aria-label="Email address" />
+        <button onclick="hmSubscribe('hm-sub-email')">Subscribe</button>
+      </div>
+      <p class="small">No platform account needed. This opens your email app addressed to Helen.</p>
+    </section>
+    
+
+    <footer class="site-footer">
+      <div><strong>Helen Mulder OT</strong></div>
+      <div class="small">Neuro-metabolic rehabilitation occupational therapist</div>
+      <div class="small">Contact: <a href="mailto:helenjmulder@gmail.com">helenjmulder@gmail.com</a></div>
+      <div class="small links"><a href="/">Home</a> · <a href="/recipes/index.html">Recipe Library</a> · <a href="/series/immune-drain/index.html">Immune Drain</a> · <a href="/series/signal-safety/index.html">Signal Safety</a></div>
+    </footer>
+    
+
+    <script>
+      function hmSubscribe(inputId) {
+        const el = document.getElementById(inputId);
+        const email = (el && el.value ? el.value.trim() : "");
+        const subject = encodeURIComponent("Subscribe - HelenMulder.com");
+        const body = encodeURIComponent(
+          "Please add me to new article alerts.\n" +
+          (email ? ("My email: " + email + "\n") : "") +
+          "(Sent from HelenMulder.com)"
+        );
+        window.location.href = "mailto:helenjmulder@gmail.com?subject=" + subject + "&body=" + body;
+      }
+    </script>
+    
 </body></html>

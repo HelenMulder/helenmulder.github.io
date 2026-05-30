@@ -1,14 +1,22 @@
 <!DOCTYPE html><html><head>
 <title>Homemade digestive broth using Instant Pot pressure cooker | Recipe</title>
 <style>
-    body { font-family: Georgia, serif; max-width: 760px; margin: 40px auto; padding: 0 20px; line-height: 1.65; color: #1a1a1a; }
+    body { font-family: Georgia, serif; max-width: 780px; margin: 40px auto; padding: 0 20px 60px; line-height: 1.7; color: rgba(0,0,0,0.95); background: #f6f5f4; }
     h1,h2,h3 { color: #2c3e50; }
     a { color: #2980b9; text-decoration: none; font-weight: 700; }
     a:hover { text-decoration: underline; }
     .topnav { margin-bottom: 20px; }
-    .card { border: 1px solid #ecf0f1; border-radius: 8px; padding: 16px; margin-bottom: 16px; }
-    .meta { color: #7f8c8d; font-size: 0.9em; }
-    </style></head><body>
+    .card { background:#ffffff; border: 1px solid #e7e3de; border-radius: 10px; padding: 16px; margin-bottom: 16px; }
+    .meta { color: #615d59; font-size: 0.92em; }
+    ul, ol { padding-left: 1.2rem; }
+    .subscribe-strip { margin-top: 24px; background: #ffffff; border: 1px solid #e7e3de; border-radius: 10px; padding: 14px; }
+    .subscribe-row { display:flex; gap:8px; flex-wrap:wrap; }
+    .subscribe-row input { padding:9px 10px; border:1px solid #e7e3de; border-radius:7px; min-width: 220px; }
+    .subscribe-row button { background:#2980b9; color:white; border:none; border-radius:7px; padding:9px 14px; cursor:pointer; }
+    .site-footer { margin-top: 26px; padding-top: 16px; border-top: 1px solid #e7e3de; }
+    </style>
+<script type='application/ld+json'>{"@context": "https://schema.org", "@type": "Recipe", "name": "Homemade digestive broth using Instant Pot pressure cooker", "recipeCategory": "Broths", "recipeIngredient": ["3lb beef bones (knuckles, feet, oxtail, or other bone)", "1 large bunch Swiss chard, spinach, or beet greens", "1 Tablespoon salt"], "recipeInstructions": [{"@type": "HowToStep", "text": "Place bones and salt in the pressure cooker pot. Fill with water to the fill line."}, {"@type": "HowToStep", "text": "Seal the valve and cook on high pressure for 90 minutes."}, {"@type": "HowToStep", "text": "Allow at least 20-30 minutes for the pressure to naturally release before removing the lid."}, {"@type": "HowToStep", "text": "Use tongs to remove the bones from the pot, leaving the broth in the pressure cooker."}, {"@type": "HowToStep", "text": "Roughly chop the greens and add them to the broth in the pot."}, {"@type": "HowToStep", "text": "Use the low saute function on the pressure cooker to simmer the greens in the broth uncovered for 30 minutes."}, {"@type": "HowToStep", "text": "Pour broth through a sieve into a clean food safe storage container. Discard leftover bones and exhausted greens."}, {"@type": "HowToStep", "text": "Store broth in the fridge. Skim the tallow fat off the cold broth before serving for easier digestion."}, {"@type": "HowToStep", "text": "Serve warm."}], "recipeYield": "3 quarts (about 12 servings)"}</script>
+</head><body>
 <div class="topnav"><a href="/">Home</a> · <a href="/recipes/index.html">All Recipes</a></div>
 <h1>Homemade digestive broth using Instant Pot pressure cooker</h1>
 <div class='meta'>Category: Broths · Series: Immune Drain</div>
@@ -28,9 +36,42 @@
 <li>Store broth in the fridge. Skim the tallow fat off the cold broth before serving for easier digestion.</li>
 <li>Serve warm.</li>
 </ol>
-<h3>Serving</h3><p>
-Serving size: 1 cup broth<br>
-Yield: 3 quarts (about 12 servings)
-</p>
+<h3>Serving</h3><ul>
+<li>Serving size: 1 cup broth</li>
+<li>Yield: 3 quarts (about 12 servings)</li>
+</ul>
 <p><a href='/constipation-prevention-dementia/published_article.html'>Read in full article: Preventing Constipation for Dementia</a></p>
+
+    <section class="subscribe-strip" aria-label="Subscribe">
+      <div class="subscribe-title">Get new articles by email</div>
+      <div class="subscribe-row">
+        <input id="hm-sub-email" type="email" placeholder="your@email.com" aria-label="Email address" />
+        <button onclick="hmSubscribe('hm-sub-email')">Subscribe</button>
+      </div>
+      <p class="small">No platform account needed. This opens your email app addressed to Helen.</p>
+    </section>
+    
+
+    <footer class="site-footer">
+      <div><strong>Helen Mulder OT</strong></div>
+      <div class="small">Neuro-metabolic rehabilitation occupational therapist</div>
+      <div class="small">Contact: <a href="mailto:helenjmulder@gmail.com">helenjmulder@gmail.com</a></div>
+      <div class="small links"><a href="/">Home</a> · <a href="/recipes/index.html">Recipe Library</a> · <a href="/series/immune-drain/index.html">Immune Drain</a> · <a href="/series/signal-safety/index.html">Signal Safety</a></div>
+    </footer>
+    
+
+    <script>
+      function hmSubscribe(inputId) {
+        const el = document.getElementById(inputId);
+        const email = (el && el.value ? el.value.trim() : "");
+        const subject = encodeURIComponent("Subscribe - HelenMulder.com");
+        const body = encodeURIComponent(
+          "Please add me to new article alerts.\n" +
+          (email ? ("My email: " + email + "\n") : "") +
+          "(Sent from HelenMulder.com)"
+        );
+        window.location.href = "mailto:helenjmulder@gmail.com?subject=" + subject + "&body=" + body;
+      }
+    </script>
+    
 </body></html>

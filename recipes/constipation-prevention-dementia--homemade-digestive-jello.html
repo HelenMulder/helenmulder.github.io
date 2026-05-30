@@ -1,14 +1,22 @@
 <!DOCTYPE html><html><head>
 <title>Homemade Digestive Jello | Recipe</title>
 <style>
-    body { font-family: Georgia, serif; max-width: 760px; margin: 40px auto; padding: 0 20px; line-height: 1.65; color: #1a1a1a; }
+    body { font-family: Georgia, serif; max-width: 780px; margin: 40px auto; padding: 0 20px 60px; line-height: 1.7; color: rgba(0,0,0,0.95); background: #f6f5f4; }
     h1,h2,h3 { color: #2c3e50; }
     a { color: #2980b9; text-decoration: none; font-weight: 700; }
     a:hover { text-decoration: underline; }
     .topnav { margin-bottom: 20px; }
-    .card { border: 1px solid #ecf0f1; border-radius: 8px; padding: 16px; margin-bottom: 16px; }
-    .meta { color: #7f8c8d; font-size: 0.9em; }
-    </style></head><body>
+    .card { background:#ffffff; border: 1px solid #e7e3de; border-radius: 10px; padding: 16px; margin-bottom: 16px; }
+    .meta { color: #615d59; font-size: 0.92em; }
+    ul, ol { padding-left: 1.2rem; }
+    .subscribe-strip { margin-top: 24px; background: #ffffff; border: 1px solid #e7e3de; border-radius: 10px; padding: 14px; }
+    .subscribe-row { display:flex; gap:8px; flex-wrap:wrap; }
+    .subscribe-row input { padding:9px 10px; border:1px solid #e7e3de; border-radius:7px; min-width: 220px; }
+    .subscribe-row button { background:#2980b9; color:white; border:none; border-radius:7px; padding:9px 14px; cursor:pointer; }
+    .site-footer { margin-top: 26px; padding-top: 16px; border-top: 1px solid #e7e3de; }
+    </style>
+<script type='application/ld+json'>{"@context": "https://schema.org", "@type": "Recipe", "name": "Homemade Digestive Jello", "recipeCategory": "Gelatin", "recipeIngredient": ["1 Tablespoon unflavored gelatin", "1/4 cup cold water", "1 3/4 cups grape juice", "Pinch salt", "1.5 tsp sugar (or to taste)"], "recipeInstructions": [{"@type": "HowToStep", "text": "Sprinkle 1 tablespoon unflavored gelatin over 1/4 cup cold water; set aside to bloom."}, {"@type": "HowToStep", "text": "Heat 1 3/4 cups grape juice, stir in 1 pinch salt and 1.5 tsp sugar."}, {"@type": "HowToStep", "text": "Pour the hot juice over the gelatin and cold water mixture, stir until completely dissolved."}, {"@type": "HowToStep", "text": "Chill in the fridge until set (about 2 hours)."}], "recipeYield": "4 servings"}</script>
+</head><body>
 <div class="topnav"><a href="/">Home</a> · <a href="/recipes/index.html">All Recipes</a></div>
 <h1>Homemade Digestive Jello</h1>
 <div class='meta'>Category: Gelatin · Series: Immune Drain</div>
@@ -25,9 +33,42 @@
 <li>Pour the hot juice over the gelatin and cold water mixture, stir until completely dissolved.</li>
 <li>Chill in the fridge until set (about 2 hours).</li>
 </ol>
-<h3>Serving</h3><p>
-Serving size: 1/2 cup<br>
-Yield: 4 servings
-</p>
+<h3>Serving</h3><ul>
+<li>Serving size: 1/2 cup</li>
+<li>Yield: 4 servings</li>
+</ul>
 <p><a href='/constipation-prevention-dementia/published_article.html'>Read in full article: Preventing Constipation for Dementia</a></p>
+
+    <section class="subscribe-strip" aria-label="Subscribe">
+      <div class="subscribe-title">Get new articles by email</div>
+      <div class="subscribe-row">
+        <input id="hm-sub-email" type="email" placeholder="your@email.com" aria-label="Email address" />
+        <button onclick="hmSubscribe('hm-sub-email')">Subscribe</button>
+      </div>
+      <p class="small">No platform account needed. This opens your email app addressed to Helen.</p>
+    </section>
+    
+
+    <footer class="site-footer">
+      <div><strong>Helen Mulder OT</strong></div>
+      <div class="small">Neuro-metabolic rehabilitation occupational therapist</div>
+      <div class="small">Contact: <a href="mailto:helenjmulder@gmail.com">helenjmulder@gmail.com</a></div>
+      <div class="small links"><a href="/">Home</a> · <a href="/recipes/index.html">Recipe Library</a> · <a href="/series/immune-drain/index.html">Immune Drain</a> · <a href="/series/signal-safety/index.html">Signal Safety</a></div>
+    </footer>
+    
+
+    <script>
+      function hmSubscribe(inputId) {
+        const el = document.getElementById(inputId);
+        const email = (el && el.value ? el.value.trim() : "");
+        const subject = encodeURIComponent("Subscribe - HelenMulder.com");
+        const body = encodeURIComponent(
+          "Please add me to new article alerts.\n" +
+          (email ? ("My email: " + email + "\n") : "") +
+          "(Sent from HelenMulder.com)"
+        );
+        window.location.href = "mailto:helenjmulder@gmail.com?subject=" + subject + "&body=" + body;
+      }
+    </script>
+    
 </body></html>
