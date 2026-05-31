@@ -1,7 +1,7 @@
 {
   "@context": "https://protocol.helenmulder.com/schema/v1/library",
-  "library_last_updated": "2026-05-31T09:50:32.933965",
-  "total_nodes": 3,
+  "library_last_updated": "2026-05-31T10:15:01.764177",
+  "total_nodes": 4,
   "nodes": [
     {
       "slug": "constipation-prevention-dementia",
@@ -24,6 +24,17 @@
       "series": "Immune Drain",
       "url": "https://helenmulder.com/gum_disease_alzheimers_link/published_article.html",
       "agent_endpoint": "https://helenmulder.com/gum_disease_alzheimers_link/ai_protocol.json"
+    },
+    {
+      "slug": "healthy_mouth_healthy_brain",
+      "title": "Healthy Mouth, Healthy Brain",
+      "date": "2026",
+      "published": "2026-01-01",
+      "updated": "2026-01-01",
+      "description": "The mouth as the open window: gram-negative oral bacteria constantly seeding the system and maintaining low-grade immune alarm in the brain.",
+      "series": "Immune Drain",
+      "url": "https://helenmulder.com/healthy_mouth_healthy_brain/published_article.html",
+      "agent_endpoint": "https://helenmulder.com/healthy_mouth_healthy_brain/ai_protocol.json"
     },
     {
       "slug": "oral_hygiene_dementia",
