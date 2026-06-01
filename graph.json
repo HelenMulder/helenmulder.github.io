@@ -1,6 +1,6 @@
 {
   "@context": "https://protocol.helenmulder.com/schema/v1/library",
-  "library_last_updated": "2026-06-01T15:57:26.446079",
+  "library_last_updated": "2026-06-01T16:19:54.933240",
   "total_nodes": 3,
   "nodes": [
     {
@@ -11,8 +11,7 @@
       "updated": "2026-05-30",
       "description": "A guide to dementia-friendly strategies for preventing constipation.",
       "series": "Immune Drain",
-      "url": "https://helenmulder.com/constipation-prevention-dementia/published_article.html",
-      "agent_endpoint": "https://helenmulder.com/constipation-prevention-dementia/ai_protocol.json"
+      "url": "https://helenmulder.com/constipation-prevention-dementia/published_article.html"
     },
     {
       "slug": "gum_disease_alzheimers_link",
@@ -22,8 +21,7 @@
       "updated": "2026-01-01",
       "description": "Exploring the link between oral hygiene and dementia.",
       "series": "Immune Drain",
-      "url": "https://helenmulder.com/gum_disease_alzheimers_link/published_article.html",
-      "agent_endpoint": "https://helenmulder.com/gum_disease_alzheimers_link/ai_protocol.json"
+      "url": "https://helenmulder.com/gum_disease_alzheimers_link/published_article.html"
     },
     {
       "slug": "oral_hygiene_dementia",
@@ -33,8 +31,7 @@
       "updated": "2026-01-01",
       "description": "A guide to dementia-friendly strategies for toothbrushing and other oral hygiene solutions.",
       "series": "Immune Drain",
-      "url": "https://helenmulder.com/oral_hygiene_dementia/published_article.html",
-      "agent_endpoint": "https://helenmulder.com/oral_hygiene_dementia/ai_protocol.json"
+      "url": "https://helenmulder.com/oral_hygiene_dementia/published_article.html"
     }
   ],
   "series": [
@@ -43,7 +40,7 @@
   ],
   "recipes": [
     {
-      "name": "Homemade digestive broth using Instant Pot pressure cooker",
+      "name": "Homemade Digestive Broth Using Instant Pot Pressure Cooker",
       "category": "Broths",
       "series": "Immune Drain",
       "url": "https://helenmulder.com/recipes/constipation-prevention-dementia--homemade-digestive-broth-using-instant-pot-pressure-cooker.html",
