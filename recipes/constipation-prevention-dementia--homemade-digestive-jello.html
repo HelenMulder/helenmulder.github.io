@@ -93,6 +93,17 @@ h1,h2,h3 { color:#23343b; letter-spacing: .15px; }
       const cfg = await r.json();
       if (cfg && cfg.endpoint) window.HM_SUBSCRIBE_ENDPOINT = cfg.endpoint;
     } catch (_) {}
+    // Auto-fill email if arriving from a one-click unsubscribe link (?email=...)
+    try {
+      const params = new URLSearchParams(window.location.search);
+      const prefill = params.get('email');
+      if (prefill) {
+        const input = document.getElementById('hm-unsub-email');
+        const status = document.getElementById('hm-unsub-status');
+        if (input) input.value = prefill;
+        if (status) status.textContent = 'Click "Unsubscribe" to confirm removal of ' + prefill + '.';
+      }
+    } catch (_) {}
   })();
 
   function hmEmailFallback(email, mode) {
