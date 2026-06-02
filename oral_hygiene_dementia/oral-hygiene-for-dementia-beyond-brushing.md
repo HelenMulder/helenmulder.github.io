@@ -11,7 +11,8 @@ series: Immune Drain
 protocol_logic:
   - objective: "Break up bacterial biofilms and raise oral pH to inhibit bacterial growth."
   - steps:
-      - action: "Switch to soft bristle brush or tongue scraper"
+
+      - action: "Switch to soft bristle brush"
         goal: "Mechanical biofilm disruption without gum damage"
       - action: "Use baking soda based toothpaste or rinse"
         goal: "Alkanizing the oral environment (raising pH)"
@@ -40,9 +41,7 @@ Stiff bristles can be painful to sensitive gums. Brushing is best done twice a d
 Baking soda is less drying, more gentle on the teeth, and raises the pH of the mouth, which inhibits bacterial growth.
 - [Wellnesse](https://wellnesse.com/products/toothpaste)
 
-### Try a tongue scraper
-This can be faster and easier than brushing methods and is highly effective at getting rid of bacteria in the mouth. Can be used first thing in the morning and before bed.
-- [Dr. Tung’s Copper Tongue Cleaner](https://drtungs.com/products/copper-tongue-cleaner)
+
 
 ### Try options that don’t require tools in the mouth
 Baking soda in water is an effective and gentle oral rinse that raises the pH of the mouth, inhibiting bacterial growth after meals. Make it yourself by mixing ½ teaspoon of baking soda in 4 ounces of warm water, or try an alkanizing (pH raising) mouthwash:
