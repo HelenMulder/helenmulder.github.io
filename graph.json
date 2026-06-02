@@ -1,8 +1,18 @@
 {
   "@context": "https://protocol.helenmulder.com/schema/v1/library",
-  "library_last_updated": "2026-06-01T16:45:22.755308",
-  "total_nodes": 3,
+  "library_last_updated": "2026-06-02T13:52:54.831630",
+  "total_nodes": 4,
   "nodes": [
+    {
+      "slug": "healthy-gut-healthy-brain",
+      "title": "Healthy Gut, Healthy Brain",
+      "date": "2026",
+      "published": "2026-06-02",
+      "updated": "2026-06-02",
+      "description": "How gut dysbiosis and LPS toxins can trigger a chronic cell danger response and worsen dementia symptoms in a low energy brain.",
+      "series": "Immune Drain",
+      "url": "https://helenmulder.com/healthy-gut-healthy-brain/published_article.html"
+    },
     {
       "slug": "constipation-prevention-dementia",
       "title": "Preventing Constipation for Dementia",
