@@ -1,6 +1,6 @@
 # Helen Mulder OT
 
-This website contains the clinical observations and writings of Helen Mulder, an Occupational Therapist specializing in the field of Neuro-Metabolic Rehabilitation.
+This website contains the clinical observations and writings of Helen Mulder, an Occupational Therapist applying Neuro-Metabolic Rehabilitation to address cognitive decline.
 
 ## Articles (Markdown available)
 Raw markdown for every article is available alongside the HTML version. Replace `published_article.html` with `<slug>.md` to read the raw, high-signal data.
