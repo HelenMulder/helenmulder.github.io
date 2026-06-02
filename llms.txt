@@ -1,0 +1,13 @@
+# Helen Mulder OT
+
+This website contains the clinical observations and writings of Helen Mulder, an Occupational Therapist focused on Neuro-metabolic rehabilitation.
+
+## Articles (Markdown available)
+Raw markdown for every article is available alongside the HTML version. Replace `published_article.html` with `<slug>.md` to read the raw, high-signal data.
+
+Example:
+- HTML: `https://helenmulder.com/some-article/published_article.html`
+- Markdown: `https://helenmulder.com/some-article/some-article.md`
+
+## Index/Archive
+The full archive index can be read as markdown at `/archive/index.md` (if dynamically generated) or parsed from the HTML sitemap.

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Helen Mulder OT</title>
+    <link>https://helenmulder.com/</link>
+    <description>Neuro-metabolic rehabilitation occupational therapist</description>
+    <atom:link href="https://helenmulder.com/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Healthy Gut, Healthy Brain</title>
+      <link>https://helenmulder.com/healthy-gut-healthy-brain/published_article.html</link>
+      <guid>https://helenmulder.com/healthy-gut-healthy-brain/published_article.html</guid>
+      <pubDate>Thu, 01 Jan 2026 12:00:00 GMT</pubDate>
+      <description>How gut dysbiosis and LPS toxins can trigger a chronic cell danger response and worsen dementia symptoms in a low energy brain.</description>
+    </item>
+    <item>
+      <title>Preventing Constipation for Dementia</title>
+      <link>https://helenmulder.com/constipation-prevention-dementia/published_article.html</link>
+      <guid>https://helenmulder.com/constipation-prevention-dementia/published_article.html</guid>
+      <pubDate>Thu, 01 Jan 2026 12:00:00 GMT</pubDate>
+      <description>A guide to dementia-friendly strategies for preventing constipation.</description>
+    </item>
+    <item>
+      <title>Healthy Mouth, Healthy Brain</title>
+      <link>https://helenmulder.com/gum_disease_alzheimers_link/published_article.html</link>
+      <guid>https://helenmulder.com/gum_disease_alzheimers_link/published_article.html</guid>
+      <pubDate>Thu, 01 Jan 2026 12:00:00 GMT</pubDate>
+      <description>Exploring the link between oral hygiene and dementia.</description>
+    </item>
+    <item>
+      <title>Oral Hygiene for Dementia - Beyond Brushing</title>
+      <link>https://helenmulder.com/oral_hygiene_dementia/published_article.html</link>
+      <guid>https://helenmulder.com/oral_hygiene_dementia/published_article.html</guid>
+      <pubDate>Thu, 01 Jan 2026 12:00:00 GMT</pubDate>
+      <description>A guide to dementia-friendly strategies for toothbrushing and other oral hygiene solutions.</description>
+    </item>
+  </channel>
+</rss>
