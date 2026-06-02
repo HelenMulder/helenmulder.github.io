@@ -18,7 +18,7 @@ protocol_logic:
 
 # Healthy Mouth, Healthy Brain
 
-The same bacteria responsible for gum disease (gingivitis) are toxic to the brain. An abundance of this bacteria can generate toxic enzymes (gingipains), which can reach the brain and trigger dementia symptoms.
+The same bacteria responsible for gum disease (gingivitis) are toxic to the brain. An abundance of this bacteria can generate toxic enzymes (gingipains), which can reach the brain and trigger dementia symptoms. [A 2019 study in Science Advances](https://www.science.org/doi/10.1126/sciadv.aau3333) found gingipains in over 90% of all Alzheimer's brain samples tested, showing a consistent relationship between oral health and dementia.
 
 ## In a healthy brain
 * **Toxins arrive:** Gingipain toxins reach the brain.
