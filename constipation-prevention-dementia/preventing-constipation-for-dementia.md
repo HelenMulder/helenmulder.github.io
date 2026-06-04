@@ -108,7 +108,7 @@ To reduce the risk of becoming constipated in the first place, the following pre
 ### Positioning & Movement
 
 - **Use a "Squatty Potty"**
-  Raising the knees above the hips while on the toilet makes it easier to pass stool. (link to squatty potty on Amazon https://www.amazon.com/Squatty-Potty-Original-Toilet-Stool/dp/B07HD7JVLB/)
+  Raising the knees above the hips while on the toilet makes it easier to pass stool. You can use a dedicated [Squatty Potty](https://www.amazon.com/Squatty-Potty-Original-Toilet-Stool/dp/B07HD7JVLB/) or any sturdy footstool.
 
 - **Gentle movement**
   Encourage walking or standing hourly while awake. This promotes circulation and gentle movement of the gut.
@@ -159,9 +159,9 @@ To reduce the risk of becoming constipated in the first place, the following pre
 
 **Instructions:**
 1. Sprinkle 1 tablespoon unflavored gelatin over 1/4 cup cold water; set aside to bloom.
-1. Heat 1 3/4 cups grape juice, stir in 1 pinch salt and 1.5 tsp sugar.
-1. Pour the hot juice over the gelatin and cold water mixture, stir until completely dissolved.
-1. Chill in the fridge until set (about 2 hours).
+2. Heat 1 3/4 cups grape juice, stir in 1 pinch salt and 1.5 tsp sugar.
+3. Pour the hot juice over the gelatin and cold water mixture, stir until completely dissolved.
+4. Chill in the fridge until set (about 2 hours).
 
 **Serving size:** 1/2 cup  
 **Yield:** 4 servings
