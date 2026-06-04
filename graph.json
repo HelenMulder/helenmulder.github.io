@@ -1,6 +1,6 @@
 {
   "@context": "https://protocol.helenmulder.com/schema/v1/library",
-  "library_last_updated": "2026-06-04T07:07:27.532231",
+  "library_last_updated": "2026-06-04T07:35:23.110721",
   "total_nodes": 4,
   "nodes": [
     {
@@ -18,7 +18,7 @@
       "title": "Preventing Constipation for Dementia",
       "date": "2026",
       "published": "2026-05-30",
-      "updated": "2026-05-30",
+      "updated": "2026-06-04",
       "description": "A guide to dementia-friendly strategies for preventing constipation.",
       "series": "Immune Drain",
       "url": "https://helenmulder.com/constipation-prevention-dementia/published_article.html"
