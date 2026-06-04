@@ -1,6 +1,6 @@
 {
   "@context": "https://protocol.helenmulder.com/schema/v1/library",
-  "library_last_updated": "2026-06-02T19:59:29.832698",
+  "library_last_updated": "2026-06-04T07:07:27.532231",
   "total_nodes": 4,
   "nodes": [
     {
@@ -61,6 +61,13 @@
       "category": "Gelatin",
       "series": "Immune Drain",
       "url": "https://helenmulder.com/recipes/constipation-prevention-dementia--homemade-digestive-jello.html",
+      "source_url": "https://helenmulder.com/constipation-prevention-dementia/published_article.html"
+    },
+    {
+      "name": "Digestive Carrot Salad",
+      "category": "Salads",
+      "series": "Immune Drain",
+      "url": "https://helenmulder.com/recipes/constipation-prevention-dementia--digestive-carrot-salad.html",
       "source_url": "https://helenmulder.com/constipation-prevention-dementia/published_article.html"
     }
   ]

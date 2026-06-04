@@ -1,45 +1,65 @@
 ---
 title: Preventing Constipation for Dementia
 author: Helen Mulder
-date: "2026-05-30"
-updated: "2026-05-30"
-description: "A guide to dementia-friendly strategies for preventing constipation."
+date: '2026-05-30'
+updated: '2026-05-30'
+description: A guide to dementia-friendly strategies for preventing constipation.
 series: Immune Drain
 series_order: 3
 recipes:
-  - name: Homemade Digestive Broth Using Instant Pot Pressure Cooker
-    category: Broths
-    ingredients:
-      - 3lb beef bones (knuckles, feet, oxtail, or other bone)
-      - 1 large bunch Swiss chard, spinach, or beet greens
-      - 1 Tablespoon salt
-    instructions:
-      - Place bones and salt in the pressure cooker pot. Fill with water to the fill line.
-      - Seal the valve and cook on high pressure for 90 minutes.
-      - Allow at least 20-30 minutes for the pressure to naturally release before removing the lid.
-      - Use tongs to remove the bones from the pot, leaving the broth in the pressure cooker.
-      - Roughly chop the greens and add them to the broth in the pot.
-      - Use the low saute function on the pressure cooker to simmer the greens in the broth uncovered for 30 minutes.
-      - Pour broth through a sieve into a clean food safe storage container. Discard leftover bones and exhausted greens.
-      - Store broth in the fridge. Skim the tallow fat off the cold broth before serving for easier digestion.
-      - Serve warm.
-    serving: 1 cup broth
-    yield: 3 quarts (about 12 servings)
-  - name: Homemade Digestive Jello
-    category: Gelatin
-    ingredients:
-      - 1 Tablespoon unflavored gelatin
-      - 1/4 cup cold water
-      - 1 3/4 cups grape juice
-      - Pinch salt
-      - 1.5 tsp sugar (or to taste)
-    instructions:
-      - Sprinkle 1 tablespoon unflavored gelatin over 1/4 cup cold water; set aside to bloom.
-      - Heat 1 3/4 cups grape juice, stir in 1 pinch salt and 1.5 tsp sugar.
-      - Pour the hot juice over the gelatin and cold water mixture, stir until completely dissolved.
-      - Chill in the fridge until set (about 2 hours).
-    serving: 1/2 cup
-    yield: 4 servings
+- name: Homemade Digestive Broth Using Instant Pot Pressure Cooker
+  category: Broths
+  ingredients:
+  - 3lb beef bones (knuckles, feet, oxtail, or other bone)
+  - 1 large bunch Swiss chard, spinach, or beet greens
+  - 1 Tablespoon salt
+  instructions:
+  - Place bones and salt in the pressure cooker pot. Fill with water to the fill line.
+  - Seal the valve and cook on high pressure for 90 minutes.
+  - Allow at least 20-30 minutes for the pressure to naturally release before removing
+    the lid.
+  - Use tongs to remove the bones from the pot, leaving the broth in the pressure
+    cooker.
+  - Roughly chop the greens and add them to the broth in the pot.
+  - Use the low saute function on the pressure cooker to simmer the greens in the
+    broth uncovered for 30 minutes.
+  - Pour broth through a sieve into a clean food safe storage container. Discard leftover
+    bones and exhausted greens.
+  - Store broth in the fridge. Skim the tallow fat off the cold broth before serving
+    for easier digestion.
+  - Serve warm.
+  serving: 1 cup broth
+  yield: 3 quarts (about 12 servings)
+- name: Homemade Digestive Jello
+  category: Gelatin
+  ingredients:
+  - 1 Tablespoon unflavored gelatin
+  - 1/4 cup cold water
+  - 1 3/4 cups grape juice
+  - Pinch salt
+  - 1.5 tsp sugar (or to taste)
+  instructions:
+  - Sprinkle 1 tablespoon unflavored gelatin over 1/4 cup cold water; set aside to
+    bloom.
+  - Heat 1 3/4 cups grape juice, stir in 1 pinch salt and 1.5 tsp sugar.
+  - Pour the hot juice over the gelatin and cold water mixture, stir until completely
+    dissolved.
+  - Chill in the fridge until set (about 2 hours).
+  serving: 1/2 cup
+  yield: 4 servings
+- name: Digestive Carrot Salad
+  category: Salads
+  ingredients:
+  - 1 medium to large carrot, shredded
+  - 1 teaspoon melted coconut oil or MCT oil
+  - 1 teaspoon distilled white vinegar
+  - pinch salt
+  instructions:
+  - Peel and shred carrot with a grater.
+  - Mix the shredded carrot with the coconut oil, vinegar, and salt.
+  - Enjoy with meals or as a snack to promote bowel regularity.
+  serving: As desired
+  yield: 1 serving
 ---
 
 # Preventing Constipation for Dementia
@@ -80,6 +100,8 @@ To reduce the risk of becoming constipated in the first place, the following pre
 - **Take MCT oil**
   One teaspoon with meals can [ease bowel movements by providing easy energy](https://pubmed.ncbi.nlm.nih.gov/41889721/#:~:text=Bowel%20movement%20indicators%2C%20subjective%20abdominal,movement%20frequency%2C%20and%20stool%20volume.). This can be increased to two teaspoons if well tolerated. Add to food or beverages only after cooking. Do not cook with MCT oil.
 
+- **Eat raw carrots**
+  Eating shredded carrots has been found to [increase stool output](https://pubmed.ncbi.nlm.nih.gov/474479/).
 - **Take warm baths**
   Aim for a 20-30 minute bath with Epsom salt, 2-3 times per week, as this can [help relax the gut](https://pmc.ncbi.nlm.nih.gov/articles/PMC9291418/).
 
@@ -133,3 +155,19 @@ To reduce the risk of becoming constipated in the first place, the following pre
 
 **Serving size:** 1/2 cup  
 **Yield:** 4 servings
+
+## Recipe: Digestive Carrot Salad
+
+**Ingredients:**
+- 1 medium to large carrot, shredded
+- 1 teaspoon melted coconut oil or MCT oil
+- 1 teaspoon distilled white vinegar
+- pinch salt
+
+**Instructions:**
+1. Peel and shred carrot with a grater.
+2. Mix the shredded carrot with the coconut oil, vinegar, and salt.
+3. Enjoy with meals or as a snack to promote bowel regularity.
+
+**Serving size:** As desired  
+**Recipe yield:** 1 serving
