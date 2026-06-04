@@ -83,11 +83,9 @@ Aim for 1-2 bowel movements a day. It is much easier to prevent constipation tha
 
 Laxatives can force the bowels to move if constipation is already present. However, this will not resolve the underlying causes, and [regular use of laxatives has been linked to higher risk of dementia](https://alz-journals.onlinelibrary.wiley.com/doi/10.1002/alz.072046).
 
-To reduce the risk of becoming constipated in the first place, use the following tiered prevention strategies to restore the relaxed, wave-like muscle motions that move matter through the digestive tract (peristalsis).
+To reduce the risk of becoming constipated in the first place, the following prevention strategies can help restore the relaxed, wave-like muscle motions that move matter through the digestive tract (peristalsis).
 
 ### Dietary & Nutritional Support
-
-These interventions provide the raw materials and metabolic energy needed for healthy gut motility.
 
 - **Drink coffee**
   The old adage is true: [coffee does indeed make you poop](https://pubmed.ncbi.nlm.nih.gov/2338272/). Do not forget milk and sugar to prevent the counterproductive jitters and stress response from plain black coffee.
@@ -99,7 +97,7 @@ These interventions provide the raw materials and metabolic energy needed for he
   One teaspoon with meals can [ease bowel movements by providing easy energy](https://pubmed.ncbi.nlm.nih.gov/41889721/#:~:text=Bowel%20movement%20indicators%2C%20subjective%20abdominal,movement%20frequency%2C%20and%20stool%20volume.). This can be increased to two teaspoons if well tolerated. Add to food or beverages only after cooking. Do not cook with MCT oil.
 
 - **Eat raw carrots**
-  Eating shredded carrots (see recipe below) has been found to [increase stool output](https://pubmed.ncbi.nlm.nih.gov/474479/).
+  Eating shredded carrots has been found to [increase stool output](https://pubmed.ncbi.nlm.nih.gov/474479/).
 
 - **Salt your food**
   Adequate salt intake ensures a hydrated body, which [reduces chance of constipation](https://pubmed.ncbi.nlm.nih.gov/39757154/). Unless you have been directed by your physician to be on a low-salt diet, do not be afraid to add salt to your food.
@@ -109,10 +107,8 @@ These interventions provide the raw materials and metabolic energy needed for he
 
 ### Positioning & Movement
 
-Optimizing body mechanics and movement helps physically guide matter through the colon.
-
 - **Use a "Squatty Potty"**
-  Raising the knees above the hips while on the toilet makes it easier to pass stool by unkinking the rectum. You can use a dedicated [Squatty Potty](https://www.amazon.com/Squatty-Potty-Original-Toilet-Stool/dp/B07HD7JVLB/) or any sturdy footstool.
+  Raising the knees above the hips while on the toilet makes it easier to pass stool. (link to squatty potty on Amazon https://www.amazon.com/Squatty-Potty-Original-Toilet-Stool/dp/B07HD7JVLB/)
 
 - **Gentle movement**
   Encourage walking or standing hourly while awake. This promotes circulation and gentle movement of the gut.
@@ -122,10 +118,8 @@ Optimizing body mechanics and movement helps physically guide matter through the
 
 ### Gut Relaxation & Warmth
 
-Reducing metabolic stress and applying heat helps switch the body into the "rest and digest" (parasympathetic) state.
-
 - **Avoid eating while watching TV or while in a hurry**
-  Stress activates the sympathetic nervous system ("fight or flight"), which slows down the digestive system.
+  Stress activates the sympathetic nervous system, which slows down the digestive system.
 
 - **Apply heat**
   If a bath is too difficult, placing a hot water bottle on the tummy for 15-30 minutes each day relaxes the gut and promotes healthy circulation.
@@ -165,9 +159,9 @@ Reducing metabolic stress and applying heat helps switch the body into the "rest
 
 **Instructions:**
 1. Sprinkle 1 tablespoon unflavored gelatin over 1/4 cup cold water; set aside to bloom.
-2. Heat 1 3/4 cups grape juice, stir in 1 pinch salt and 1.5 tsp sugar.
-3. Pour the hot juice over the gelatin and cold water mixture, stir until completely dissolved.
-4. Chill in the fridge until set (about 2 hours).
+1. Heat 1 3/4 cups grape juice, stir in 1 pinch salt and 1.5 tsp sugar.
+1. Pour the hot juice over the gelatin and cold water mixture, stir until completely dissolved.
+1. Chill in the fridge until set (about 2 hours).
 
 **Serving size:** 1/2 cup  
 **Yield:** 4 servings
