@@ -1,0 +1,81 @@
+:root {
+  --ink: #263238;
+  --muted: #65706d;
+  --paper: #fbfaf7;
+  --surface: #ffffff;
+  --line: #dfe3dc;
+  --accent: #356f78;
+  --accent-soft: #6d8978;
+  --focus: #b86e45;
+}
+
+* { box-sizing: border-box; }
+
+html { background: var(--paper); }
+
+body {
+  max-width: 46rem;
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem 5rem;
+  color: var(--ink);
+  background: var(--paper);
+  font-family: Georgia, "Iowan Old Style", "Palatino Linotype", serif;
+  font-size: 1.125rem;
+  line-height: 1.78;
+  overflow-wrap: break-word;
+}
+
+a { color: var(--accent); text-decoration-thickness: .08em; text-underline-offset: .16em; }
+a:hover { color: #1f5962; }
+a:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; border-radius: 2px; }
+
+h1, h2, h3 { color: #243a3d; line-height: 1.25; letter-spacing: .01em; }
+h1 { font-size: clamp(2rem, 5vw, 2.65rem); margin: 1.6rem 0 .75rem; }
+h2 { font-size: clamp(1.4rem, 3vw, 1.75rem); margin: 2.6rem 0 .8rem; }
+h3 { font-size: 1.2rem; margin: 1.8rem 0 .5rem; }
+p, li { max-width: 40rem; }
+ul, ol { padding-left: 1.35rem; }
+
+.hero, .site-header {
+  margin-bottom: 2rem;
+  padding: 1.25rem 1.35rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: .8rem;
+}
+.hero h1, .site-header h1 { margin: 0; font-size: clamp(1.6rem, 4vw, 2.05rem); }
+.hero .tagline, .site-header p, .meta, .small, .micro-meta { color: var(--muted); }
+.hero .tagline, .site-header p { margin: .35rem 0 0; }
+.title-row { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+
+.series-panel, .card, .article-item {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: .7rem;
+}
+.series-panel { margin: 1.5rem 0; padding: 1.15rem; }
+.article-item, .card { padding: 1rem 1.1rem; margin: .75rem 0; }
+.article-item h3, .card h3 { margin: 0 0 .25rem; }
+.article-item p { margin: 0; }
+.series-kicker { color: var(--accent-soft); font-size: .75rem; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; }
+.series-title { margin: .2rem 0 .75rem; }
+
+.citation { margin-left: .08em; font-family: system-ui, sans-serif; font-size: .7em; font-weight: 700; vertical-align: super; line-height: 0; }
+.citation a { text-decoration: none; }
+.references { margin-top: 3rem; padding-top: 1.25rem; border-top: 1px solid var(--line); }
+.references ol { padding-left: 1.5rem; }
+.references li { padding-left: .25rem; margin: .5rem 0; font-size: .95rem; }
+
+.series-nav, .site-footer { margin-top: 2.5rem; padding-top: 1.2rem; border-top: 1px solid var(--line); }
+.series-nav { display: flex; justify-content: space-between; gap: 1rem; }
+.subscribe-strip { margin-top: 2rem; padding: 1rem 1.15rem; border: 1px solid var(--line); border-left: 4px solid var(--accent-soft); border-radius: .7rem; background: var(--surface); }
+.subscribe-title { font-weight: 700; }
+.subscribe-row { display: flex; gap: .5rem; flex-wrap: wrap; margin-top: .5rem; }
+.subscribe-row input { min-width: min(100%, 15rem); padding: .55rem .65rem; border: 1px solid var(--line); border-radius: .4rem; font: inherit; }
+.subscribe-row button { padding: .55rem .8rem; color: white; background: var(--accent); border: 0; border-radius: .4rem; font: inherit; cursor: pointer; }
+
+@media (max-width: 48rem) {
+  body { padding: 1.5rem 1rem 4rem; font-size: 1.1rem; line-height: 1.72; }
+  .series-nav { display: block; }
+  .series-nav a { display: block; margin: .75rem 0; }
+}
