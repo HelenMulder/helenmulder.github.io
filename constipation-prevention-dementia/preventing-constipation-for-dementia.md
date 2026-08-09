@@ -1,4 +1,4 @@
----
+﻿---
 title: Preventing Constipation for Dementia
 author: Helen Mulder
 date: '2026-05-30'
@@ -127,57 +127,8 @@ To reduce the risk of becoming constipated in the first place, the following pre
 - **Take warm baths**
   Aim for a 20-30 minute bath with Epsom salt, 2-3 times per week, as this can [help relax the gut](https://pmc.ncbi.nlm.nih.gov/articles/PMC9291418/).
 
-## Recipe: Homemade Digestive Broth Using Instant Pot Pressure Cooker
+## Recipes
 
-**Ingredients:**
-- 3lb beef bones (knuckles, feet, oxtail, or other bone)
-- 1 large bunch Swiss chard, spinach, or beet greens
-- 1 Tablespoon salt
-
-**Instructions:**
-1. Place bones and salt in the pressure cooker pot. Fill with water to the fill line.
-2. Seal the valve and cook on high pressure for 90 minutes.
-3. Allow at least 20-30 minutes for the pressure to naturally release before removing the lid.
-4. Use tongs to remove the bones from the pot, leaving the broth in the pressure cooker.
-5. Roughly chop the greens and add them to the broth in the pot.
-6. Use the low saute function on the pressure cooker to simmer the greens in the broth uncovered for 30 minutes.
-7. Pour broth through a sieve into a clean food safe storage container. Discard leftover bones and exhausted greens.
-8. Store broth in the fridge. Skim the tallow fat off the cold broth before serving for easier digestion.
-9. Serve warm.
-
-**Serving size:** 1 cup broth  
-**Recipe yield:** 3 quarts (about 12 servings)
-
-## Recipe: Homemade Digestive Jello
-
-**Ingredients:**
-- 1 Tablespoon unflavored gelatin
-- 1/4 cup cold water
-- 1 3/4 cups grape juice
-- Pinch salt
-- 1.5 tsp sugar (or to taste)
-
-**Instructions:**
-1. Sprinkle 1 tablespoon unflavored gelatin over 1/4 cup cold water; set aside to bloom.
-2. Heat 1 3/4 cups grape juice, stir in 1 pinch salt and 1.5 tsp sugar.
-3. Pour the hot juice over the gelatin and cold water mixture, stir until completely dissolved.
-4. Chill in the fridge until set (about 2 hours).
-
-**Serving size:** 1/2 cup  
-**Yield:** 4 servings
-
-## Recipe: Digestive Carrot Salad
-
-**Ingredients:**
-- 1 medium to large carrot, shredded
-- 1 teaspoon melted coconut oil or MCT oil
-- 1 teaspoon distilled white vinegar
-- pinch salt
-
-**Instructions:**
-1. Peel and shred carrot with a grater.
-2. Mix the shredded carrot with the coconut oil, vinegar, and salt.
-3. Enjoy with meals or as a snack to promote bowel regularity.
-
-**Serving size:** As desired  
-**Recipe yield:** 1 serving
+- [Homemade Digestive Broth Using Instant Pot Pressure Cooker](/recipes/constipation-prevention-dementia--homemade-digestive-broth-using-instant-pot-pressure-cooker.html)
+- [Homemade Digestive Jello](/recipes/constipation-prevention-dementia--homemade-digestive-jello.html)
+- [Digestive Carrot Salad](/recipes/constipation-prevention-dementia--digestive-carrot-salad.html)

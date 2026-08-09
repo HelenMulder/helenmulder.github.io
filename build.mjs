@@ -28,12 +28,6 @@ const articles = [
   },
 ];
 
-const recipeLinks = `## Recipes
-
-- [Homemade Digestive Broth Using Instant Pot Pressure Cooker](/recipes/constipation-prevention-dementia--homemade-digestive-broth-using-instant-pot-pressure-cooker.html)
-- [Homemade Digestive Jello](/recipes/constipation-prevention-dementia--homemade-digestive-jello.html)
-- [Digestive Carrot Salad](/recipes/constipation-prevention-dementia--digestive-carrot-salad.html)`;
-
 function decode(text) {
   return text.replaceAll('\u00e2\u20ac\u0153', '\u201c').replaceAll('\u00e2\u20ac\u009d', '\u201d')
     .replaceAll('\u00e2\u20ac\u2122', '\u2019').replaceAll('\u00e2\u20ac\u201d', '\u2014')
@@ -130,10 +124,7 @@ async function buildArticle(article) {
   const [main, companion] = await Promise.all([readFile(join(root, article.source), 'utf8'), readFile(join(root, article.companion), 'utf8')]);
   const citations = [];
   const mainHtml = renderMarkdown(main, citations, false, article.slug === 'gum_disease_alzheimers_link');
-  const companionContent = article.slug === 'healthy-gut-healthy-brain'
-    ? `${companion.replace(/\n## Recipe:[\s\S]*$/, '')}\n\n${recipeLinks}`
-    : companion;
-  const companionHtml = renderMarkdown(companionContent, citations, true);
+  const companionHtml = renderMarkdown(companion, citations, true);
   const references = citations.length ? `<section class="references"><h2>References</h2><ol>${citations.map((cite, index) => `<li id="reference-${index + 1}"><a href="${cite.href}">${escapeHtml(cite.label)}</a></li>`).join('')}</ol></section>` : '';
   const body = `<header class="site-header"><div class="title-row"><h1>Helen Mulder OT</h1><a href="/">Back to Home</a></div><p>Neuro-Metabolic Rehabilitation for Cognitive Decline &#183; <a href="/series/immune-drain/index.html">Immune Drain Series</a></p><div class="micro-meta">Published ${article.published} &#183; Updated ${article.updated}</div></header><main><h1>${escapeHtml(article.title)}</h1>${mainHtml}${companionHtml}${references}</main>${subscription()}${footer()}`;
   await writeFile(join(root, article.slug, 'published_article.html'), shell(article.title, article.description, body));
