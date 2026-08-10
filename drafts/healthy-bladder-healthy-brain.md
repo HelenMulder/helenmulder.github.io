@@ -3,17 +3,16 @@ title: UTI Prevention for Dementia
 status: draft
 ---
 
-How recurrent UTIs and metabolic stress in the brain can lead to a dangerous cycle of cognitive decline. 
+## How recurrent UTIs and metabolic stress in the brain can lead to a dangerous cycle of cognitive decline. 
+
 People living with dementia are more vulnerable to bacterial invasion due to: 
 
 - High stress
-- Residual bacteria from previous UTIs
 - Long periods of sitting
 - Refusal or difficulty with changing clothes or washing
 - Difficulty making it to the bathroom on time
 - Incontinence and incontinence garments
 - Catheters
-- PureWick (less risky than catheters but still a problem if the wick becomes soiled with feces)
 - Reduced liquid intake
 - Difficulty reporting symptoms
 
@@ -30,9 +29,10 @@ These bacteria can then trigger a “new” UTI months later, as the bladder lin
 
 ## Breaking the cycle
 
-By preventing UTIs and restoring metabolism, you can give the body a break from the resource intensive job of responding to invaders, freeing up its resources for rest, repair, and daily activity.
+- By preventing UTIs, you can give the body a break from the resource intensive job of responding to invaders, freeing up its resources for rest, repair, and daily activity.
 
-Recognize that recurrent UTIs are difficult to eradicate, and that a new instance of a UTI is not necessarily a failure of hygiene. Keeping body tissues as healthy as possible by supporting metabolism is as important as hygiene.
+- Recognize that recurrent UTIs are difficult to eradicate, and that a new instance of a UTI is not necessarily a failure of hygiene. Keeping body tissues as healthy as possible by [supporting metabolism](/restoring-neuro-metabolism-in-dementia/published_article.html) is as important as hygiene.
+
 ## Stop invaders at the front door
 
 The bacterial strain responsible for the majority of UTIs is a gut-dwelling bacterial called E. Coli, mainly spread through feces. Bacteria can migrate from the anus, up the perineum, up the urethra, and take residence in the bladder. Women are more vulnerable due to having a shorter urethra. 
@@ -59,7 +59,7 @@ The bacterial strain responsible for the majority of UTIs is a gut-dwelling bact
 
 ## If you suspect a UTI
 
-Prompt treatment for UTIs is absolutely essential for preventing worsening of dementia. Delayed or withheld treatment of UTIs can accelerate cognitive decline compared to those who received prompt treatment. If you suspect a UTI, communicate with your physician promptly to determine appropriate next treatment steps. Treatment may be necessary.
+Prompt treatment for UTIs is absolutely essential for preventing worsening of dementia. Delayed or withheld treatment of UTIs can accelerate cognitive decline compared to those who received prompt treatment. If you suspect a UTI, communicate with your physician promptly to determine appropriate next treatment steps. 
 
 ## Warning signs of a possible UTI
 
@@ -78,4 +78,4 @@ Prompt treatment for UTIs is absolutely essential for preventing worsening of de
 ## Bottom line
 
 
-In a brain with impaired metabolism, there is no extra fuel to spare to manage additional threats. Preventing recurrent UTIs, alongside preventing constipation [constipation article](/healthy-gut-healthy-brain/published_article.html) and oral bacteria [oral health article](/gum_disease_alzheimers_link/published_article.html) reduces demands on an already burdened system.
+In a brain with impaired metabolism, there is no extra fuel to spare to manage additional threats. Preventing recurrent UTIs, alongside [preventing constipation](/healthy-gut-healthy-brain/published_article.html) and [oral bacteria](/gum_disease_alzheimers_link/published_article.html) reduces demands on an already burdened system.

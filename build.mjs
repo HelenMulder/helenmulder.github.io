@@ -1,4 +1,4 @@
-import { readFile, writeFile, readdir } from 'node:fs/promises';
+import { readFile, writeFile, readdir, mkdir } from 'node:fs/promises';
 import { join, relative } from 'node:path';
 
 const root = process.cwd();
@@ -80,6 +80,15 @@ const articles = [
     description: 'Practical strategies to reduce urinary tract infection risk in dementia care.',
     published: '2026-08-09',
     updated: '2026-08-09',
+  },
+];
+
+const unlistedPages = [
+  {
+    slug: 'restoring-neuro-metabolism-in-dementia',
+    source: 'drafts/restoring-neuro-metabolism-in-dementia.md',
+    title: 'Restoring Neuro-Metabolism in Dementia',
+    description: 'An article in development.',
   },
 ];
 
@@ -208,6 +217,16 @@ async function buildArticle(article) {
   await writeFile(join(root, article.slug, 'published_article.html'), shell(article.title, article.description, body));
 }
 
+async function buildUnlistedPage(page) {
+  const main = await readFile(join(root, page.source), 'utf8');
+  const citations = [];
+  const mainHtml = renderMarkdown(main, citations);
+  const references = citations.length ? `<section class="references"><h2>References</h2><ol>${citations.map((cite, index) => `<li id="reference-${index + 1}"><a href="${cite.href}">${escapeHtml(cite.label)}</a></li>`).join('')}</ol></section>` : '';
+  const body = `<header class="site-header"><div class="title-row"><h1>Helen Mulder OT</h1><a href="/">Back to Home</a></div><p>Neuro-Metabolic Rehabilitation for Cognitive Decline</p></header><main><h1>${escapeHtml(page.title)}</h1>${mainHtml}${references}</main>${subscription()}${footer()}`;
+  await mkdir(join(root, page.slug), { recursive: true });
+  await writeFile(join(root, page.slug, 'published_article.html'), shell(page.title, page.description, body));
+}
+
 async function redirect(folder, destination) {
   const page = `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta http-equiv="refresh" content="0; url=${destination}"><link rel="canonical" href="${destination}"><title>Redirecting…</title></head><body><p><a href="${destination}">Continue to article</a></p></body></html>`;
   await writeFile(join(root, folder, 'index.html'), page);
@@ -237,6 +256,7 @@ async function updateExistingHtml(directory = root) {
 
 async function main() {
   for (const article of articles) await buildArticle(article);
+  for (const page of unlistedPages) await buildUnlistedPage(page);
   await buildHome();
   await redirectIndex('healthy-gut-healthy-brain', '/healthy-gut-healthy-brain/published_article.html');
   await redirectIndex('gum_disease_alzheimers_link', '/gum_disease_alzheimers_link/published_article.html');
