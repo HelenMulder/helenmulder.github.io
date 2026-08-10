@@ -51,7 +51,7 @@ const referenceTitles = new Map([
 const articles = [
   {
     slug: 'healthy-gut-healthy-brain',
-    source: 'healthy-gut-healthy-brain/healthy-gut-healthy-brain.md',
+    source: 'articles/constipation-prevention-for-dementia.md',
     title: 'Constipation Prevention for Dementia',
     description: 'Dementia-friendly strategies for bowel regularity.',
     published: '2026-06-02',
@@ -59,7 +59,7 @@ const articles = [
   },
   {
     slug: 'gum_disease_alzheimers_link',
-    source: 'gum_disease_alzheimers_link/healthy-mouth-healthy-brain.md',
+    source: 'articles/oral-health-for-dementia.md',
     title: 'Oral Health for Dementia - Beyond Brushing',
     description: 'Maintaining a tolerable oral health routine for dementia.',
     published: '2026-01-01',
@@ -67,7 +67,7 @@ const articles = [
   },
   {
     slug: 'immune-drain',
-    source: 'drafts/immune-drain.md',
+    source: 'articles/immune-drain.md',
     title: 'Immune Drain',
     description: 'How recurring infections and chronic local inflammation can burden an already stressed system.',
     published: '2026-08-09',
@@ -75,7 +75,7 @@ const articles = [
   },
   {
     slug: 'uti-prevention-for-dementia',
-    source: 'drafts/healthy-bladder-healthy-brain.md',
+    source: 'articles/uti-prevention-for-dementia.md',
     title: 'UTI Prevention for Dementia',
     description: 'Practical strategies to reduce urinary tract infection risk in dementia care.',
     published: '2026-08-09',
