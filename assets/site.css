@@ -56,6 +56,10 @@ ul, ol { padding-left: 1.35rem; }
 .series-panel { margin: 1.5rem 0; padding: 1.15rem; }
 .article-library { margin: 1.5rem 0; }
 .article-library .series-kicker { margin: 0 0 .6rem .1rem; }
+.feature-article { border-color: #b8ccc2; border-left: 4px solid var(--accent-soft); padding: 1.35rem; }
+.feature-article h2 { margin: .15rem 0 .45rem; font-size: clamp(1.55rem, 3vw, 2rem); }
+.guide-heading { margin: 2.25rem 0 .75rem; }
+.guide-heading h2 { margin: .15rem 0; font-size: 1.25rem; }
 .library-panel { display: inline-block; min-width: 13rem; }
 .article-item, .card { padding: 1rem 1.1rem; margin: .75rem 0; }
 .article-item h3, .card h3 { margin: 0 0 .25rem; }

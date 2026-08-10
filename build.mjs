@@ -164,9 +164,11 @@ function shell(title, description, body) {
 }
 
 async function buildHome() {
-  const ordered = [...articles].sort((a, b) => (a.slug === 'immune-drain' ? -1 : b.slug === 'immune-drain' ? 1 : 0));
-  const cards = ordered.map((article) => `<article class="article-item"><h3><a href="/${article.slug}/published_article.html">${escapeHtml(article.title)}</a></h3><p>${escapeHtml(article.description)}</p><div class="meta">Published ${article.published} &#183; Updated ${article.updated}</div></article>`).join('');
-  const body = `<header class="hero"><h1>Helen Mulder OT</h1><p class="tagline">Neuro-Metabolic Rehabilitation for Cognitive Decline</p></header><section class="article-library"><div class="series-kicker">Writing</div>${cards}</section><section class="series-panel library-panel"><h2 class="series-title"><a href="/recipes/index.html">Recipe Library</a></h2></section>${subscription()}${footer()}`;
+  const master = articles.find((article) => article.slug === 'immune-drain');
+  const guides = articles.filter((article) => article.slug !== 'immune-drain');
+  const feature = `<article class="article-item feature-article"><div class="series-kicker">Immune Drain series</div><h2><a href="/${master.slug}/published_article.html">${escapeHtml(master.title)}</a></h2><p>${escapeHtml(master.description)}</p><div class="meta">Published ${master.published} &#183; Updated ${master.updated}</div></article>`;
+  const cards = guides.map((article) => `<article class="article-item"><h3><a href="/${article.slug}/published_article.html">${escapeHtml(article.title)}</a></h3><p>${escapeHtml(article.description)}</p><div class="meta">Published ${article.published} &#183; Updated ${article.updated}</div></article>`).join('');
+  const body = `<header class="hero"><h1>Helen Mulder OT</h1><p class="tagline">Neuro-Metabolic Rehabilitation for Cognitive Decline</p></header><section class="article-library">${feature}<div class="guide-heading"><div class="series-kicker">Care guides</div><h2>Practical routes</h2></div>${cards}</section><section class="series-panel library-panel"><h2 class="series-title"><a href="/recipes/index.html">Recipe Library</a></h2></section>${subscription()}${footer()}`;
   await writeFile(join(root, 'index.html'), shell('Helen Mulder OT', 'Neuro-Metabolic Rehabilitation for Cognitive Decline', body));
 }
 
