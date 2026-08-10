@@ -66,8 +66,13 @@ ul, ol { padding-left: 1.35rem; }
 .references ol { padding-left: 1.5rem; }
 .references li { padding-left: .25rem; margin: .5rem 0; font-size: .95rem; }
 
-.series-nav, .site-footer { margin-top: 2.5rem; padding-top: 1.2rem; border-top: 1px solid var(--line); }
-.series-nav { display: flex; justify-content: space-between; gap: 1rem; }
+.site-footer { margin-top: 2.5rem; padding-top: 1.2rem; border-top: 1px solid var(--line); }
+.series-nav { margin-top: 2.5rem; padding: 1.15rem; border: 1px solid var(--line); border-radius: .7rem; background: var(--surface); }
+.series-nav h2 { margin: .2rem 0 .75rem; font-size: 1.2rem; }
+.series-nav ul { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .45rem 1rem; margin: 0; padding: 0; list-style: none; }
+.series-nav li { margin: 0; }
+.series-nav [aria-current="page"] { font-weight: 700; color: var(--ink); }
+.series-nav em { color: var(--muted); font-size: .9em; }
 .subscribe-strip { margin-top: 2rem; padding: 1rem 1.15rem; border: 1px solid var(--line); border-left: 4px solid var(--accent-soft); border-radius: .7rem; background: var(--surface); }
 .subscribe-title { font-weight: 700; }
 .subscribe-row { display: flex; gap: .5rem; flex-wrap: wrap; margin-top: .5rem; }
@@ -76,6 +81,5 @@ ul, ol { padding-left: 1.35rem; }
 
 @media (max-width: 48rem) {
   body { padding: 1.5rem 1rem 4rem; font-size: 1.1rem; line-height: 1.72; }
-  .series-nav { display: block; }
-  .series-nav a { display: block; margin: .75rem 0; }
+  .series-nav ul { grid-template-columns: 1fr; }
 }

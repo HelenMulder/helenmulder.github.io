@@ -4,26 +4,40 @@ import { join, relative } from 'node:path';
 const root = process.cwd();
 const scholarlyHosts = new Set([
   'pubmed.ncbi.nlm.nih.gov', 'pmc.ncbi.nlm.nih.gov', 'www.science.org',
-  'science.org', 'alz-journals.onlinelibrary.wiley.com', 'pubs.acs.org',
+  'science.org', 'alz-journals.onlinelibrary.wiley.com', 'pubs.acs.org', 'doi.org',
 ]);
 
 const articles = [
   {
     slug: 'healthy-gut-healthy-brain',
     source: 'healthy-gut-healthy-brain/healthy-gut-healthy-brain.md',
-    companion: 'constipation-prevention-dementia/preventing-constipation-for-dementia.md',
-    title: 'Healthy Gut, Healthy Brain',
-    description: 'How gut dysbiosis and LPS toxins can trigger a chronic cell danger response and worsen dementia symptoms in a low energy brain.',
+    title: 'Constipation Prevention for Dementia',
+    description: 'Dementia-friendly strategies for bowel regularity.',
     published: '2026-06-02',
     updated: '2026-08-09',
   },
   {
     slug: 'gum_disease_alzheimers_link',
     source: 'gum_disease_alzheimers_link/healthy-mouth-healthy-brain.md',
-    companion: 'oral_hygiene_dementia/oral-hygiene-for-dementia-beyond-brushing.md',
-    title: 'Healthy Mouth, Healthy Brain',
-    description: 'Exploring the link between oral hygiene and dementia.',
+    title: 'Oral Health for Dementia - Beyond Brushing',
+    description: 'Maintaining a tolerable oral health routine for dementia',
     published: '2026-01-01',
+    updated: '2026-08-09',
+  },
+  {
+    slug: 'immune-drain',
+    source: 'drafts/immune-drain.md',
+    title: 'Immune Drain: How chronic infections can burden an already stressed system, and what to do about it',
+    description: 'How recurring infections and chronic local inflammation can burden an already stressed system.',
+    published: '2026-08-09',
+    updated: '2026-08-09',
+  },
+  {
+    slug: 'uti-prevention-for-dementia',
+    source: 'drafts/healthy-bladder-healthy-brain.md',
+    title: 'UTI Prevention for Dementia',
+    description: 'Practical strategies to reduce urinary tract infection risk in dementia care.',
+    published: '2026-08-09',
     updated: '2026-08-09',
   },
 ];
@@ -45,8 +59,8 @@ function withoutFrontmatter(markdown) {
 
 function inline(text, citations) {
   const links = [];
-  let safe = escapeHtml(text).replace(/\[([^\]]+)\]\((https?:\/\/[^)]+)\)/g, (_, label, href) => {
-    const host = new URL(href).hostname;
+  let safe = escapeHtml(text).replace(/\[([^\]]+)\]\(((?:https?:\/\/|\/)[^)]+)\)/g, (_, label, href) => {
+    const host = href.startsWith('http') ? new URL(href).hostname : '';
     if (scholarlyHosts.has(host)) {
       let reference = citations.find((item) => item.href === href);
       if (!reference) {
@@ -95,6 +109,10 @@ function renderMarkdown(markdown, citations, demoteFirstHeading = false, omitFir
       output.push(`<li>${inline((unordered || ordered)[1], citations)}</li>`);
       continue;
     }
+    if (listType && /^\s{2,}\S/.test(rawLine) && output.at(-1)?.startsWith('<li>')) {
+      output[output.length - 1] = output.at(-1).replace(/<\/li>$/, `<br>${inline(line, citations)}</li>`);
+      continue;
+    }
     closeList();
     paragraph.push(line);
   }
@@ -110,6 +128,21 @@ function footer() {
   return `<footer class="site-footer"><div><strong>Helen Mulder OT</strong></div><div class="small">Helen Mulder is an Occupational Therapist applying Neuro-Metabolic Rehabilitation to address cognitive decline.</div><div class="small">Contact: <a href="mailto:helenjmulder@gmail.com">helenjmulder@gmail.com</a></div><div class="small"><a href="/">Home</a> &#183; <a href="/recipes/index.html">Recipe Library</a> &#183; <a href="/series/immune-drain/index.html">Immune Drain</a> &#183; <a href="/series/signal-safety/index.html">Signal Safety</a></div></footer>`;
 }
 
+function seriesNavigation(currentSlug) {
+  const routes = [
+    { title: 'Immune Drain', slug: 'immune-drain' },
+    { title: 'Constipation Prevention for Dementia', slug: 'healthy-gut-healthy-brain' },
+    { title: 'Oral Health for Dementia', slug: 'gum_disease_alzheimers_link' },
+    { title: 'UTI Prevention for Dementia', slug: 'uti-prevention-for-dementia' },
+  ];
+  const links = routes.map((route) => route.slug === currentSlug
+    ? `<li><span aria-current="page">${escapeHtml(route.title)}</span></li>`
+    : route.slug
+      ? `<li><a href="/${route.slug}/published_article.html">${escapeHtml(route.title)}</a></li>`
+      : `<li><span>${escapeHtml(route.title)} <em>${route.status}</em></span></li>`).join('');
+  return `<section class="series-nav" aria-label="Immune Drain Series"><div class="series-kicker">Series</div><h2>Part of the Immune Drain Series</h2><ul>${links}</ul></section>`;
+}
+
 function shell(title, description, body) {
   return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>${escapeHtml(title)} | Helen Mulder OT</title><meta name="description" content="${escapeHtml(description)}"><link rel="stylesheet" href="/assets/site.css"></head><body>${body}</body></html>`;
 }
@@ -120,13 +153,18 @@ async function buildHome() {
   await writeFile(join(root, 'index.html'), shell('Helen Mulder OT', 'Neuro-Metabolic Rehabilitation for Cognitive Decline', body));
 }
 
+async function buildImmuneDrainSeries() {
+  const cards = articles.map((article) => `<article class="article-item"><h3><a href="/${article.slug}/published_article.html">${escapeHtml(article.title)}</a></h3><p>${escapeHtml(article.description)}</p><div class="meta">Published ${article.published} &#183; Updated ${article.updated}</div></article>`).join('');
+  const body = `<header class="site-header"><div class="title-row"><h1>Helen Mulder OT</h1><a href="/">Back to Home</a></div><p>Neuro-Metabolic Rehabilitation for Cognitive Decline</p></header><main><div class="series-kicker">Series</div><h1>Immune Drain Series</h1>${cards}</main>${subscription()}${footer()}`;
+  await writeFile(join(root, 'series', 'immune-drain', 'index.html'), shell('Immune Drain Series', 'Practical articles on reducing chronic burdens in dementia care.', body));
+}
+
 async function buildArticle(article) {
-  const [main, companion] = await Promise.all([readFile(join(root, article.source), 'utf8'), readFile(join(root, article.companion), 'utf8')]);
+  const main = await readFile(join(root, article.source), 'utf8');
   const citations = [];
-  const mainHtml = renderMarkdown(main, citations, false, article.slug === 'gum_disease_alzheimers_link');
-  const companionHtml = renderMarkdown(companion, citations, true);
+  const mainHtml = renderMarkdown(main, citations, article.slug === 'gum_disease_alzheimers_link', article.slug === 'immune-drain');
   const references = citations.length ? `<section class="references"><h2>References</h2><ol>${citations.map((cite, index) => `<li id="reference-${index + 1}"><a href="${cite.href}">${escapeHtml(cite.label)}</a></li>`).join('')}</ol></section>` : '';
-  const body = `<header class="site-header"><div class="title-row"><h1>Helen Mulder OT</h1><a href="/">Back to Home</a></div><p>Neuro-Metabolic Rehabilitation for Cognitive Decline &#183; <a href="/series/immune-drain/index.html">Immune Drain Series</a></p><div class="micro-meta">Published ${article.published} &#183; Updated ${article.updated}</div></header><main><h1>${escapeHtml(article.title)}</h1>${mainHtml}${companionHtml}${references}</main>${subscription()}${footer()}`;
+  const body = `<header class="site-header"><div class="title-row"><h1>Helen Mulder OT</h1><a href="/">Back to Home</a></div><p>Neuro-Metabolic Rehabilitation for Cognitive Decline &#183; <a href="/series/immune-drain/index.html">Immune Drain Series</a></p><div class="micro-meta">Published ${article.published} &#183; Updated ${article.updated}</div></header><main><h1>${escapeHtml(article.title)}</h1>${mainHtml}${seriesNavigation(article.slug)}${references}</main>${subscription()}${footer()}`;
   await writeFile(join(root, article.slug, 'published_article.html'), shell(article.title, article.description, body));
 }
 
@@ -156,9 +194,9 @@ async function updateExistingHtml(directory = root) {
 }
 
 async function main() {
-  await buildArticle(articles[0]);
-  await buildArticle(articles[1]);
+  for (const article of articles) await buildArticle(article);
   await buildHome();
+  await buildImmuneDrainSeries();
   await redirectIndex('healthy-gut-healthy-brain', '/healthy-gut-healthy-brain/published_article.html');
   await redirectIndex('gum_disease_alzheimers_link', '/gum_disease_alzheimers_link/published_article.html');
   await redirect('constipation-prevention-dementia', '/healthy-gut-healthy-brain/published_article.html');
