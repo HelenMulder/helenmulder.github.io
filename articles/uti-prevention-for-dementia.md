@@ -3,7 +3,7 @@ title: UTI Prevention for Dementia
 status: draft
 ---
 
-## How recurrent UTIs and metabolic stress in the brain can lead to a dangerous cycle of cognitive decline. 
+## Practical strategies for reducing the burden of UTIs and dementia
 
 People living with dementia are more vulnerable to bacterial invasion due to: 
 
@@ -51,11 +51,11 @@ The bacterial strain responsible for the majority of UTIs is a gut-dwelling bact
 
 - There is some mixed evidence that D-mannose may makes it more difficult for E. coli to adhere to the bladder ([Lenger et al., 2020](https://pubmed.ncbi.nlm.nih.gov/32497610/); [Vargas et al., 2025](https://pubmed.ncbi.nlm.nih.gov/41004704/)).
 
-- E Coli thrive in acidic urine ([Shields-Cutler et al., 2015](https://pubmed.ncbi.nlm.nih.gov/25861985/); [Carreras-Abad et al., 2024](https://pmc.ncbi.nlm.nih.gov/articles/PMC11277208/)). A small amount (¾ teaspoon) of baking soda dissolved in 8oz water taken twice a day away from meals may improve UTI symptoms ([Sönmez et al., 2018](https://pubmed.ncbi.nlm.nih.gov/28975365/)). As a bonus it [inhibits oral bacterial as well](/gum_disease_alzheimers_link/).
+- E Coli thrive in acidic urine ([Shields-Cutler et al., 2015](https://pubmed.ncbi.nlm.nih.gov/25861985/); [Carreras-Abad et al., 2024](https://pmc.ncbi.nlm.nih.gov/articles/PMC11277208/)). A small amount (¾ teaspoon) of baking soda dissolved in 8oz water taken twice a day away from meals may improve urinary symptoms ([Sönmez et al., 2018](https://pubmed.ncbi.nlm.nih.gov/28975365/)). As a bonus it [inhibits oral bacterial as well](/gum_disease_alzheimers_link/).
 
-- Maintain hydration and do not avoid liquids. Some people with incontinence reduce fluid intake in an attempt to reduce the need to use the restroom. However, reduced fluid intake lowers the pH of the urine and makes the environment more friendly to bacteria. Tea, milk, coffee, fruit, fruit juice, soups, [broths](/recipes/constipation-prevention-dementia--homemade-digestive-broth-using-instant-pot-pressure-cooker.html), stews, [jello](/recipes/constipation-prevention-dementia--homemade-digestive-jello.html) all count as liquid ([Hooper et al., 2015](https://pubmed.ncbi.nlm.nih.gov/24333321/); [Hooton et al., 2018](https://pubmed.ncbi.nlm.nih.gov/30285042/)). You do not need to avoid acidic beverages. Orange juice and other citrus juices are acidic in the glass, but contain high amounts of citrate. Citrate is turned into bicarbonate by the kidneys, which raises urinary pH like baking soda ([Odvina, 2006](https://pubmed.ncbi.nlm.nih.gov/17699358/)).
+- Maintain hydration and do not avoid liquids. Some people with incontinence reduce fluid intake in an attempt to reduce the need to use the restroom. However, reduced fluid intake lowers the pH of the urine and makes the environment more friendly to bacteria. Tea, milk, coffee, fruit, fruit juice, soups, [broths](/recipes/constipation-prevention-dementia--homemade-digestive-broth-using-instant-pot-pressure-cooker.html), stews, and [jello](/recipes/constipation-prevention-dementia--homemade-digestive-jello.html) all count as liquid ([Hooper et al., 2015](https://pubmed.ncbi.nlm.nih.gov/24333321/); [Hooton et al., 2018](https://pubmed.ncbi.nlm.nih.gov/30285042/)). You do not need to avoid acidic beverages. Orange juice and other citrus juices are acidic in the glass, but contain high amounts of citrate. Citrate is turned into bicarbonate by the kidneys, which raises urinary pH like baking soda ([Odvina, 2006](https://pubmed.ncbi.nlm.nih.gov/17699358/)).
 
-- Keep the pipes flowing: Constipation(3-5 bowel movements a week or fewer) leads to a compacted bowel. This extra mass can press on the urethra, which can cause the bladder to not empty fully with urination ([Averbeck & Madersbacher, 2011](https://doi.org/10.1590/s1677-55382011000100003)). Residual stagnant urine in the bladder is especially vulnerable to colonization from bacterial invaders. [Aim for daily bowel movements](/healthy-gut-healthy-brain/).
+- Keep the pipes flowing: Constipation (fewer than 5 bowel movements a week) leads to a compacted bowel. This extra mass can press on the urethra, which can cause the bladder to not empty fully with urination ([Averbeck & Madersbacher, 2011](https://doi.org/10.1590/s1677-55382011000100003)). Residual stagnant urine in the bladder is especially vulnerable to colonization from bacterial invaders. [Aim for daily bowel movements](/healthy-gut-healthy-brain/).
 
 ## If you suspect a UTI
 
