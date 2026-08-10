@@ -2,6 +2,7 @@ import { readFile, writeFile, readdir, mkdir } from 'node:fs/promises';
 import { join, relative } from 'node:path';
 
 const root = process.cwd();
+const siteUrl = 'https://helenmulder.com';
 const scholarlyHosts = new Set([
   'pubmed.ncbi.nlm.nih.gov', 'pmc.ncbi.nlm.nih.gov', 'www.science.org',
   'science.org', 'alz-journals.onlinelibrary.wiley.com', 'pubs.acs.org', 'doi.org',
@@ -92,6 +93,21 @@ const unlistedPages = [
   },
 ];
 
+const recipes = [
+  {
+    title: 'Digestive Carrot Salad',
+    path: '/recipes/constipation-prevention-dementia--digestive-carrot-salad.html',
+  },
+  {
+    title: 'Homemade Digestive Broth Using Instant Pot Pressure Cooker',
+    path: '/recipes/constipation-prevention-dementia--homemade-digestive-broth-using-instant-pot-pressure-cooker.html',
+  },
+  {
+    title: 'Homemade Digestive Jello',
+    path: '/recipes/constipation-prevention-dementia--homemade-digestive-jello.html',
+  },
+];
+
 function decode(text) {
   return text.replaceAll('\u00e2\u20ac\u0153', '\u201c').replaceAll('\u00e2\u20ac\u009d', '\u201d')
     .replaceAll('\u00e2\u20ac\u2122', '\u2019').replaceAll('\u00e2\u20ac\u201d', '\u2014')
@@ -101,6 +117,44 @@ function decode(text) {
 
 function escapeHtml(text) {
   return decode(text).replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;');
+}
+
+function escapeXml(text) {
+  return String(text).replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;').replaceAll("'", '&apos;');
+}
+
+function absoluteUrl(pathname) {
+  return `${siteUrl}${pathname}`;
+}
+
+function articlePath(article) {
+  return `/${article.slug}/published_article.html`;
+}
+
+function articleSchema(article, pathname) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: article.title,
+    description: article.description,
+    datePublished: article.published,
+    dateModified: article.updated,
+    author: {
+      '@type': 'Person',
+      name: 'Helen Mulder',
+      jobTitle: 'Occupational Therapist',
+      url: siteUrl,
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Helen Mulder OT',
+      url: siteUrl,
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': absoluteUrl(pathname),
+    },
+  };
 }
 
 function withoutFrontmatter(markdown) {
@@ -195,8 +249,11 @@ function seriesNavigation(currentSlug) {
   return `<section class="series-nav" aria-label="Immune Drain Series"><div class="series-kicker">Part of the series</div><h2>Immune Drain</h2><div class="series-track"><div class="series-master">${link(master, 'series-master-link')}</div><div class="series-guides"><div class="series-nav-label">Care guides</div><ul>${guides.map((guide) => `<li>${link(guide, 'series-guide-link')}</li>`).join('')}</ul></div></div></section>`;
 }
 
-function shell(title, description, body) {
-  return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>${escapeHtml(title)} | Helen Mulder OT</title><meta name="description" content="${escapeHtml(description)}"><link rel="stylesheet" href="/assets/site.css"></head><body>${body}</body></html>`;
+function shell(title, description, body, pathname = '/', structuredData = null) {
+  const jsonLd = structuredData
+    ? `<script type="application/ld+json">${JSON.stringify(structuredData).replaceAll('<', '\\u003c')}</script>`
+    : '';
+  return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>${escapeHtml(title)} | Helen Mulder OT</title><meta name="description" content="${escapeHtml(description)}"><link rel="canonical" href="${absoluteUrl(pathname)}"><link rel="stylesheet" href="/assets/site.css">${jsonLd}</head><body>${body}</body></html>`;
 }
 
 async function buildHome() {
@@ -205,7 +262,7 @@ async function buildHome() {
   const feature = `<article class="home-series-master"><h2><a href="/${master.slug}/published_article.html">${escapeHtml(master.title)}</a></h2><p>${escapeHtml(master.description)}</p><div class="meta">Published ${master.published} &#183; Updated ${master.updated}</div></article>`;
   const cards = guides.map((article) => `<article class="home-series-guide"><h3><a href="/${article.slug}/published_article.html">${escapeHtml(article.title)}</a></h3><p>${escapeHtml(article.description)}</p><div class="meta">Published ${article.published} &#183; Updated ${article.updated}</div></article>`).join('');
   const body = `<header class="hero"><h1>Helen Mulder OT</h1><p class="tagline">Neuro-Metabolic Rehabilitation for Cognitive Decline</p></header><section class="home-series" aria-label="Immune Drain series"><div class="series-kicker">Series</div><div class="series-track">${feature}<div class="series-guides"><div class="series-nav-label">Care guides</div>${cards}</div></div></section><section class="series-panel library-panel"><h2 class="series-title"><a href="/recipes/index.html">Recipe Library</a></h2></section>${subscription()}${footer()}`;
-  await writeFile(join(root, 'index.html'), shell('Helen Mulder OT', 'Neuro-Metabolic Rehabilitation for Cognitive Decline', body));
+  await writeFile(join(root, 'index.html'), shell('Helen Mulder OT', 'Neuro-Metabolic Rehabilitation for Cognitive Decline', body, '/'));
 }
 
 async function buildArticle(article) {
@@ -214,7 +271,8 @@ async function buildArticle(article) {
   const mainHtml = renderMarkdown(main, citations, article.slug === 'gum_disease_alzheimers_link', article.slug === 'immune-drain');
   const references = citations.length ? `<section class="references"><h2>References</h2><ol>${citations.map((cite, index) => `<li id="reference-${index + 1}"><a href="${cite.href}">${escapeHtml(cite.label)}</a></li>`).join('')}</ol></section>` : '';
   const body = `<header class="site-header"><div class="title-row"><h1>Helen Mulder OT</h1><a href="/">Back to Home</a></div><p>Neuro-Metabolic Rehabilitation for Cognitive Decline</p><div class="micro-meta">Published ${article.published} &#183; Updated ${article.updated}</div></header><main><h1>${escapeHtml(article.title)}</h1>${mainHtml}${seriesNavigation(article.slug)}${references}</main>${subscription()}${footer()}`;
-  await writeFile(join(root, article.slug, 'published_article.html'), shell(article.title, article.description, body));
+  const pathname = articlePath(article);
+  await writeFile(join(root, article.slug, 'published_article.html'), shell(article.title, article.description, body, pathname, articleSchema(article, pathname)));
 }
 
 async function buildUnlistedPage(page) {
@@ -224,7 +282,47 @@ async function buildUnlistedPage(page) {
   const references = citations.length ? `<section class="references"><h2>References</h2><ol>${citations.map((cite, index) => `<li id="reference-${index + 1}"><a href="${cite.href}">${escapeHtml(cite.label)}</a></li>`).join('')}</ol></section>` : '';
   const body = `<header class="site-header"><div class="title-row"><h1>Helen Mulder OT</h1><a href="/">Back to Home</a></div><p>Neuro-Metabolic Rehabilitation for Cognitive Decline</p></header><main><h1>${escapeHtml(page.title)}</h1>${mainHtml}${references}</main>${subscription()}${footer()}`;
   await mkdir(join(root, page.slug), { recursive: true });
-  await writeFile(join(root, page.slug, 'published_article.html'), shell(page.title, page.description, body));
+  await writeFile(join(root, page.slug, 'published_article.html'), shell(page.title, page.description, body, `/${page.slug}/published_article.html`));
+}
+
+async function buildSiteMetadata() {
+  const maximumUpdated = articles.map((article) => article.updated).sort().at(-1);
+  const publicPages = [
+    { path: '/', updated: maximumUpdated },
+    ...articles.map((article) => ({ path: articlePath(article), updated: article.updated })),
+    { path: '/recipes/index.html', updated: maximumUpdated },
+    ...recipes.map((recipe) => ({ path: recipe.path, updated: maximumUpdated })),
+  ];
+  const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${publicPages.map((page) => `  <url><loc>${escapeXml(absoluteUrl(page.path))}</loc><lastmod>${page.updated}</lastmod></url>`).join('\n')}\n</urlset>\n`;
+  const latestDate = new Date(`${maximumUpdated}T12:00:00Z`);
+  const rssDate = (date) => new Date(`${date}T12:00:00Z`).toUTCString();
+  const feedArticles = [...articles].sort((left, right) => right.published.localeCompare(left.published));
+  const feed = `<?xml version="1.0" encoding="UTF-8"?>\n<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">\n  <channel>\n    <title>Helen Mulder OT</title>\n    <link>${siteUrl}/</link>\n    <description>Neuro-Metabolic Rehabilitation for Cognitive Decline</description>\n    <atom:link href="${siteUrl}/feed.xml" rel="self" type="application/rss+xml"/>\n    <lastBuildDate>${latestDate.toUTCString()}</lastBuildDate>\n${feedArticles.map((article) => `    <item>\n      <title>${escapeXml(article.title)}</title>\n      <link>${escapeXml(absoluteUrl(articlePath(article)))}</link>\n      <guid isPermaLink="true">${escapeXml(absoluteUrl(articlePath(article)))}</guid>\n      <pubDate>${rssDate(article.published)}</pubDate>\n      <description>${escapeXml(article.description)}</description>\n    </item>`).join('\n')}\n  </channel>\n</rss>\n`;
+  const graph = {
+    site_name: 'Helen Mulder OT',
+    site_url: siteUrl,
+    last_updated: maximumUpdated,
+    articles: articles.map((article) => ({
+      title: article.title,
+      description: article.description,
+      published: article.published,
+      updated: article.updated,
+      series: 'Immune Drain',
+      url: absoluteUrl(articlePath(article)),
+    })),
+    recipes: recipes.map((recipe) => ({ title: recipe.title, url: absoluteUrl(recipe.path) })),
+  };
+  const publicLinks = articles.map((article) => `- [${article.title}](${absoluteUrl(articlePath(article))}): ${article.description}`);
+  const recipeLinks = recipes.map((recipe) => `- [${recipe.title}](${absoluteUrl(recipe.path)})`);
+  const llms = `# Helen Mulder OT\n\nPersonal writing by Helen Mulder, Occupational Therapist, on practical dementia care and neuro-metabolic rehabilitation.\n\n## Articles\n\n${publicLinks.join('\n')}\n\n## Recipes\n\n- [Recipe Library](${absoluteUrl('/recipes/index.html')})\n${recipeLinks.join('\n')}\n\n## Notes\n\nArticles represent the author's professional perspective and include linked references where relevant.\n`;
+  const ai = `# Helen Mulder OT\n\nPublic index for Helen Mulder's writing on practical dementia care and neuro-metabolic rehabilitation.\n\n## Articles\n\n${publicLinks.join('\n')}\n\n## Site resources\n\n- [Homepage](${siteUrl}/)\n- [RSS feed](${absoluteUrl('/feed.xml')})\n- [Sitemap](${absoluteUrl('/sitemap.xml')})\n- [Recipe Library](${absoluteUrl('/recipes/index.html')})\n`;
+  await Promise.all([
+    writeFile(join(root, 'sitemap.xml'), sitemap),
+    writeFile(join(root, 'feed.xml'), feed),
+    writeFile(join(root, 'graph.json'), `${JSON.stringify(graph, null, 2)}\n`),
+    writeFile(join(root, 'llms.txt'), llms),
+    writeFile(join(root, 'ai.txt'), ai),
+  ]);
 }
 
 async function redirect(folder, destination) {
@@ -249,6 +347,10 @@ async function updateExistingHtml(directory = root) {
       updated = updated.replaceAll(' · <a href="/series/signal-safety/index.html">Signal Safety</a>', '');
       if (!updated.includes('name="viewport"')) updated = updated.replace(/<head>/i, '<head><meta name="viewport" content="width=device-width, initial-scale=1">');
       updated = updated.replace(/<meta name="viewport" content="width=device-width, initial-scale=1"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">/i, '<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">');
+      if (!/rel=["']canonical["']/i.test(updated)) {
+        const pathname = `/${relative(root, path).replaceAll('\\', '/')}`;
+        updated = updated.replace(/<\/head>/i, `<link rel="canonical" href="${absoluteUrl(pathname)}"></head>`);
+      }
       if (updated !== original) await writeFile(path, updated);
     }
   }
@@ -258,6 +360,7 @@ async function main() {
   for (const article of articles) await buildArticle(article);
   for (const page of unlistedPages) await buildUnlistedPage(page);
   await buildHome();
+  await buildSiteMetadata();
   await redirectIndex('healthy-gut-healthy-brain', '/healthy-gut-healthy-brain/published_article.html');
   await redirectIndex('gum_disease_alzheimers_link', '/gum_disease_alzheimers_link/published_article.html');
   await redirect('constipation-prevention-dementia', '/healthy-gut-healthy-brain/published_article.html');

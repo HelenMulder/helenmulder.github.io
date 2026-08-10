@@ -1,13 +1,21 @@
 # Helen Mulder OT
 
-This website contains the clinical observations and writings of Helen Mulder, an Occupational Therapist applying Neuro-Metabolic Rehabilitation to address cognitive decline.
+Personal writing by Helen Mulder, Occupational Therapist, on practical dementia care and neuro-metabolic rehabilitation.
 
-## Articles (Markdown available)
-Raw markdown for every article is available alongside the HTML version. Replace `published_article.html` with `<slug>.md` to read the raw, high-signal data.
+## Articles
 
-Example:
-- HTML: `https://helenmulder.com/some-article/published_article.html`
-- Markdown: `https://helenmulder.com/some-article/some-article.md`
+- [Constipation Prevention for Dementia](https://helenmulder.com/healthy-gut-healthy-brain/published_article.html): Dementia-friendly strategies for bowel regularity.
+- [Oral Health for Dementia - Beyond Brushing](https://helenmulder.com/gum_disease_alzheimers_link/published_article.html): Maintaining a tolerable oral health routine for dementia.
+- [Immune Drain](https://helenmulder.com/immune-drain/published_article.html): How recurring infections and chronic local inflammation can burden an already stressed system.
+- [UTI Prevention for Dementia](https://helenmulder.com/uti-prevention-for-dementia/published_article.html): Practical strategies to reduce urinary tract infection risk in dementia care.
 
-## Index/Archive
-The full archive index can be read as markdown at `/archive/index.md` (if dynamically generated) or parsed from the HTML sitemap.
+## Recipes
+
+- [Recipe Library](https://helenmulder.com/recipes/index.html)
+- [Digestive Carrot Salad](https://helenmulder.com/recipes/constipation-prevention-dementia--digestive-carrot-salad.html)
+- [Homemade Digestive Broth Using Instant Pot Pressure Cooker](https://helenmulder.com/recipes/constipation-prevention-dementia--homemade-digestive-broth-using-instant-pot-pressure-cooker.html)
+- [Homemade Digestive Jello](https://helenmulder.com/recipes/constipation-prevention-dementia--homemade-digestive-jello.html)
+
+## Notes
+
+Articles represent the author's professional perspective and include linked references where relevant.

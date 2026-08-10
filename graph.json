@@ -1,73 +1,53 @@
 {
-  "@context": "https://protocol.helenmulder.com/schema/v1/library",
-  "library_last_updated": "2026-06-04T07:39:35.001062",
-  "total_nodes": 4,
-  "nodes": [
+  "site_name": "Helen Mulder OT",
+  "site_url": "https://helenmulder.com",
+  "last_updated": "2026-08-09",
+  "articles": [
     {
-      "slug": "healthy-gut-healthy-brain",
-      "title": "Healthy Gut, Healthy Brain",
-      "date": "2026",
+      "title": "Constipation Prevention for Dementia",
+      "description": "Dementia-friendly strategies for bowel regularity.",
       "published": "2026-06-02",
-      "updated": "2026-06-02",
-      "description": "How gut dysbiosis and LPS toxins can trigger a chronic cell danger response and worsen dementia symptoms in a low energy brain.",
+      "updated": "2026-08-09",
       "series": "Immune Drain",
       "url": "https://helenmulder.com/healthy-gut-healthy-brain/published_article.html"
     },
     {
-      "slug": "constipation-prevention-dementia",
-      "title": "Preventing Constipation for Dementia",
-      "date": "2026",
-      "published": "2026-05-30",
-      "updated": "2026-06-04",
-      "description": "A guide to dementia-friendly strategies for preventing constipation.",
-      "series": "Immune Drain",
-      "url": "https://helenmulder.com/constipation-prevention-dementia/published_article.html"
-    },
-    {
-      "slug": "gum_disease_alzheimers_link",
-      "title": "Healthy Mouth, Healthy Brain",
-      "date": "2026",
+      "title": "Oral Health for Dementia - Beyond Brushing",
+      "description": "Maintaining a tolerable oral health routine for dementia.",
       "published": "2026-01-01",
-      "updated": "2026-01-01",
-      "description": "Exploring the link between oral hygiene and dementia.",
+      "updated": "2026-08-09",
       "series": "Immune Drain",
       "url": "https://helenmulder.com/gum_disease_alzheimers_link/published_article.html"
     },
     {
-      "slug": "oral_hygiene_dementia",
-      "title": "Oral Hygiene for Dementia - Beyond Brushing",
-      "date": "2026",
-      "published": "2026-01-01",
-      "updated": "2026-01-01",
-      "description": "A guide to dementia-friendly strategies for toothbrushing and other oral hygiene solutions.",
+      "title": "Immune Drain",
+      "description": "How recurring infections and chronic local inflammation can burden an already stressed system.",
+      "published": "2026-08-09",
+      "updated": "2026-08-09",
       "series": "Immune Drain",
-      "url": "https://helenmulder.com/oral_hygiene_dementia/published_article.html"
+      "url": "https://helenmulder.com/immune-drain/published_article.html"
+    },
+    {
+      "title": "UTI Prevention for Dementia",
+      "description": "Practical strategies to reduce urinary tract infection risk in dementia care.",
+      "published": "2026-08-09",
+      "updated": "2026-08-09",
+      "series": "Immune Drain",
+      "url": "https://helenmulder.com/uti-prevention-for-dementia/published_article.html"
     }
-  ],
-  "series": [
-    "Immune Drain"
   ],
   "recipes": [
     {
-      "name": "Homemade Digestive Broth Using Instant Pot Pressure Cooker",
-      "category": "Broths",
-      "series": "Immune Drain",
-      "url": "https://helenmulder.com/recipes/constipation-prevention-dementia--homemade-digestive-broth-using-instant-pot-pressure-cooker.html",
-      "source_url": "https://helenmulder.com/constipation-prevention-dementia/published_article.html"
+      "title": "Digestive Carrot Salad",
+      "url": "https://helenmulder.com/recipes/constipation-prevention-dementia--digestive-carrot-salad.html"
     },
     {
-      "name": "Homemade Digestive Jello",
-      "category": "Gelatin",
-      "series": "Immune Drain",
-      "url": "https://helenmulder.com/recipes/constipation-prevention-dementia--homemade-digestive-jello.html",
-      "source_url": "https://helenmulder.com/constipation-prevention-dementia/published_article.html"
+      "title": "Homemade Digestive Broth Using Instant Pot Pressure Cooker",
+      "url": "https://helenmulder.com/recipes/constipation-prevention-dementia--homemade-digestive-broth-using-instant-pot-pressure-cooker.html"
     },
     {
-      "name": "Digestive Carrot Salad",
-      "category": "Salads",
-      "series": "Immune Drain",
-      "url": "https://helenmulder.com/recipes/constipation-prevention-dementia--digestive-carrot-salad.html",
-      "source_url": "https://helenmulder.com/constipation-prevention-dementia/published_article.html"
+      "title": "Homemade Digestive Jello",
+      "url": "https://helenmulder.com/recipes/constipation-prevention-dementia--homemade-digestive-jello.html"
     }
   ]
 }

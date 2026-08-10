@@ -57,9 +57,6 @@ The bacterial strain responsible for the majority of UTIs is a gut-dwelling bact
 
 - Keep the pipes flowing: Constipation (fewer than 5 bowel movements a week) leads to a compacted bowel. This extra mass can press on the urethra, which can cause the bladder to not empty fully with urination ([Averbeck & Madersbacher, 2011](https://doi.org/10.1590/s1677-55382011000100003)). Residual stagnant urine in the bladder is especially vulnerable to colonization from bacterial invaders. [Aim for daily bowel movements](/healthy-gut-healthy-brain/).
 
-## If you suspect a UTI
-
-Prompt treatment for UTIs is absolutely essential for preventing worsening of dementia. Delayed or withheld treatment of UTIs can accelerate cognitive decline compared to those who received prompt treatment. If you suspect a UTI, communicate with your physician promptly to determine appropriate next treatment steps. 
 
 ## Warning signs of a possible UTI
 
@@ -74,6 +71,11 @@ Prompt treatment for UTIs is absolutely essential for preventing worsening of de
 - Oral temperature > 100*F (fever)
 
 - Oral temperature < 96.8 (hypothermia)
+
+## If you suspect a UTI
+
+Prompt treatment for UTIs is absolutely essential for preventing worsening of dementia. Delayed or withheld treatment of UTIs can accelerate cognitive decline compared to those who received prompt treatment. If you suspect a UTI, communicate with your physician promptly to determine appropriate next treatment steps.
+
 
 ## Bottom line
 

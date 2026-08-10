@@ -6,6 +6,18 @@ User-agent: GPTBot
 Allow: /
 Sitemap: https://helenmulder.com/sitemap.xml
 
+User-agent: OAI-SearchBot
+Allow: /
+Sitemap: https://helenmulder.com/sitemap.xml
+
 User-agent: ClaudeBot
+Allow: /
+Sitemap: https://helenmulder.com/sitemap.xml
+
+User-agent: Claude-User
+Allow: /
+Sitemap: https://helenmulder.com/sitemap.xml
+
+User-agent: Google-Extended
 Allow: /
 Sitemap: https://helenmulder.com/sitemap.xml
