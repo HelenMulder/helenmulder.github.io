@@ -8,7 +8,7 @@ series: Immune Drain
 series_order: 2
 ---
 
-## People Living With Dementia Can Be More Vulnerable to Constipation
+## People living with dementia can be more vulnerable to constipation
 
 Although anyone can become constipated, people living with dementia can be more at risk due to:
 
@@ -21,13 +21,13 @@ Although anyone can become constipated, people living with dementia can be more 
 - Not chewing food as thoroughly 
 - Difficulty feeling sensation of having to have a bowel movement
 
-## What is Constipation And Why It Matters
+## What is constipation and why it matters
 
 Constipation is defined medically as having 5 or fewer bowel movements a week. The longer stool stays in the colon, the more time bacteria have to grow in the stool.  We all have bacteria in our digestive tract, and they have an important job: fermenting fiber, supporting metabolism, and synthesizing vitamins before waste is passed outside the body. Some of these bacteria are known as “gram-negative” bacteria. These bacteria have a unique shield that protects them from dying in a low-oxygen environment such as the colon. When these bacteria grow too large in population and eventually die, their abandoned shields leave behind a toxin called lipopolysaccharide (LPS).
 
 Constipation can lead to the overproduction of this gram-negative bacteria. An abundance of LPS produced by the gram-negative bacteria can escape the gut and reach the circulatory system. In healthy individuals, this bacteria remains in the gut and any stragglers are taken care of by the immune system. But in a metabolically stressed body, these toxins can overwhelm the immune system. [Increased rates of constipation have an association with dementia](https://pubmed.ncbi.nlm.nih.gov/37775319/). You can read more about how immune stressors affect the brain [here](/immune-drain/published_article.html). Constipation can lead to needless pain, increased irritability, difficulty sleeping, agitation, and reduced appetite for those living with dementia.  Maintaining daily bowel movements can free up resources for rest, repair, and daily activity. 
 
-## Preventing Constipation for Dementia
+## Preventing constipation for dementia
 
 It is much easier to prevent constipation than to resolve it after it begins.
 
@@ -35,7 +35,7 @@ Laxatives can force the bowels to move if constipation is already present. Howev
 
 To reduce the risk of becoming constipated in the first place, the following prevention strategies can help restore the relaxed, wave-like muscle motions that move matter through the digestive tract (peristalsis).
 
-### Dietary & Nutritional Support
+### Dietary & nutritional support
 
 - **Drink coffee**
   The old adage is true: [Coffee can indeed make you poop.](https://pubmed.ncbi.nlm.nih.gov/2338272/). Both regular and decaf can stimulate bowel movements in some people. 
@@ -61,7 +61,7 @@ To reduce the risk of becoming constipated in the first place, the following pre
 - **Enjoy fruit**
   Increased fruit intake is associated with [reduced frequency of constipation](https://pubmed.ncbi.nlm.nih.gov/37905980/).
 
-### Movement & Timing
+### Movement & timing
 
 
 - **Gentle movement**

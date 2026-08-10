@@ -5,7 +5,7 @@ status: draft
 
 # Immune Drain: How chronic infections can burden an already stressed system, and what to do about it
 
-## How Recurrent UTIs Can Reinforce Metabolic Stress in the Brain
+## How recurrent UTIs can reinforce metabolic stress in the brain
 
 An abundance of chronic bacterial invaders can damage the bladder and kidneys ([UTI guide](/uti-prevention-for-dementia/published_article.html)) , gut lining ([constipation guide](/healthy-gut-healthy-brain/published_article.html)), gums ([oral-health guide](/gum_disease_alzheimers_link/published_article.html)). This damage triggers chemical alarm messengers (inflammatory cytokines) that can reach the bloodstream. These chemical alarm messengers can alert the brain via visceral afferent pathways (the brain’s sensory antennas for the body) or the blood brain barrier ([Wang et al., 2022](https://pubmed.ncbi.nlm.nih.gov/35783147/); [Tracey, 2002](https://doi.org/10.1038/nature01321) ) When brain cells detect these alarm signals, they can respond by downshifting their energy production and releasing amyloid: a response that can cause a sudden onset of agitation or withdrawal ([Holmes et al., 2003](https://pubmed.ncbi.nlm.nih.gov/12754353/); [Cunningham et al., 2021](https://pubmed.ncbi.nlm.nih.gov/34080771/); [Giridharan et al., 2019](https://doi.org/10.3389/fnagi.2019.00122); [Soscia et al., 2010](https://pubmed.ncbi.nlm.nih.gov/20209079/) ). This metabolic downshift response and release of antimicrobial amyloid peptides is normally a temporary defense strategy: neutralize incoming threats by cutting off energy supply to a potential influx of invaders ([Nathan & Ding, 2010](https://doi.org/10.1016/j.cell.2010.01.022)) After the threat has passed, brain cells resume normal metabolic operations and restore healthy metabolism. 
 
@@ -14,7 +14,7 @@ However, under conditions of pre-existing metabolic stress (energy deficit), the
 
 In this condition of systemic metabolic stress and dementia, a vicious cycle can become entrenched: a body and brain stuck in a loop of bacterial invaders, responding to the invasion by downshifting metabolism, lacking the resources to resume normal cleanup and metabolic operations, followed by another wave of invaders attacking an already stressed system. Both acute infections (UTIs) and chronic bacterial loads (constipation, periodontitis) can contribute to this vicious cycle ([Fong et al., 2009](https://pubmed.ncbi.nlm.nih.gov/19414723/)). 
 
-# How to Reduce the Immune Drain
+## How to reduce the immune drain
 
 People living with dementia are more vulnerable to acute and chronic infections ([Kim et al., 2026](https://pubmed.ncbi.nlm.nih.gov/41630631/)). They also have impaired metabolism, making it more difficult to overcome infections, potentially leading to a runaway state of self-reinforcing dysregulation ([Karin & Alon, 2017](https://pmc.ncbi.nlm.nih.gov/articles/PMC5488663/)) Reducing persistent stressors, alongside supporting metabolism, may help to improve the potential for restoring an improved level of systemic regulation. 
 

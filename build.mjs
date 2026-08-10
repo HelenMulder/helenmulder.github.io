@@ -167,7 +167,7 @@ function subscription() {
 }
 
 function footer() {
-  return `<footer class="site-footer"><div><strong>Helen Mulder OT</strong></div><div class="small">Helen Mulder is an Occupational Therapist applying Neuro-Metabolic Rehabilitation to address cognitive decline.</div><div class="small">Contact: <a href="mailto:helenjmulder@gmail.com">helenjmulder@gmail.com</a></div><div class="small"><a href="/">Home</a> &#183; <a href="/recipes/index.html">Recipe Library</a> &#183; <a href="/series/immune-drain/index.html">Immune Drain</a></div></footer>`;
+  return `<footer class="site-footer"><div><strong>Helen Mulder OT</strong></div><div class="small">Helen Mulder is an Occupational Therapist applying Neuro-Metabolic Rehabilitation to address cognitive decline.</div><div class="small">Contact: <a href="mailto:helenjmulder@gmail.com">helenjmulder@gmail.com</a></div><div class="small"><a href="/">Home</a> &#183; <a href="/recipes/index.html">Recipe Library</a> &#183; <a href="/immune-drain/published_article.html">Immune Drain</a></div></footer>`;
 }
 
 function seriesNavigation(currentSlug) {
@@ -177,7 +177,7 @@ function seriesNavigation(currentSlug) {
     { title: 'Oral Health for Dementia', slug: 'gum_disease_alzheimers_link' },
     { title: 'UTI Prevention for Dementia', slug: 'uti-prevention-for-dementia' },
   ];
-  const link = (route, className = '') => `<a class="${className}" href="/${route.slug}/published_article.html"${route.slug === currentSlug ? ' aria-current="page"' : ''}>${escapeHtml(route.title)}${route.slug === currentSlug ? '<span class="current-marker">You are here</span>' : ''}</a>`;
+  const link = (route, className = '') => `<a class="${className}" href="/${route.slug}/published_article.html"${route.slug === currentSlug ? ' aria-current="page"' : ''}>${escapeHtml(route.title)}</a>`;
   return `<section class="series-nav" aria-label="Immune Drain Series"><div class="series-kicker">Part of the series</div><h2>Immune Drain</h2><div class="series-track"><div class="series-master">${link(master, 'series-master-link')}</div><div class="series-guides"><div class="series-nav-label">Care guides</div><ul>${guides.map((guide) => `<li>${link(guide, 'series-guide-link')}</li>`).join('')}</ul></div></div></section>`;
 }
 
@@ -188,16 +188,10 @@ function shell(title, description, body) {
 async function buildHome() {
   const master = articles.find((article) => article.slug === 'immune-drain');
   const guides = articles.filter((article) => article.slug !== 'immune-drain');
-  const feature = `<article class="article-item feature-article"><div class="series-kicker">Immune Drain series</div><h2><a href="/${master.slug}/published_article.html">${escapeHtml(master.title)}</a></h2><p>${escapeHtml(master.description)}</p><div class="meta">Published ${master.published} &#183; Updated ${master.updated}</div></article>`;
-  const cards = guides.map((article) => `<article class="article-item"><h3><a href="/${article.slug}/published_article.html">${escapeHtml(article.title)}</a></h3><p>${escapeHtml(article.description)}</p><div class="meta">Published ${article.published} &#183; Updated ${article.updated}</div></article>`).join('');
-  const body = `<header class="hero"><h1>Helen Mulder OT</h1><p class="tagline">Neuro-Metabolic Rehabilitation for Cognitive Decline</p></header><section class="article-library">${feature}<div class="guide-heading"><div class="series-kicker">Care guides</div><h2>Practical routes</h2></div>${cards}</section><section class="series-panel library-panel"><h2 class="series-title"><a href="/recipes/index.html">Recipe Library</a></h2></section>${subscription()}${footer()}`;
+  const feature = `<article class="home-series-master"><h2><a href="/${master.slug}/published_article.html">${escapeHtml(master.title)}</a></h2><p>${escapeHtml(master.description)}</p><div class="meta">Published ${master.published} &#183; Updated ${master.updated}</div></article>`;
+  const cards = guides.map((article) => `<article class="home-series-guide"><h3><a href="/${article.slug}/published_article.html">${escapeHtml(article.title)}</a></h3><p>${escapeHtml(article.description)}</p><div class="meta">Published ${article.published} &#183; Updated ${article.updated}</div></article>`).join('');
+  const body = `<header class="hero"><h1>Helen Mulder OT</h1><p class="tagline">Neuro-Metabolic Rehabilitation for Cognitive Decline</p></header><section class="home-series" aria-label="Immune Drain series"><div class="series-kicker">Series</div><div class="series-track">${feature}<div class="series-guides"><div class="series-nav-label">Care guides</div>${cards}</div></div></section><section class="series-panel library-panel"><h2 class="series-title"><a href="/recipes/index.html">Recipe Library</a></h2></section>${subscription()}${footer()}`;
   await writeFile(join(root, 'index.html'), shell('Helen Mulder OT', 'Neuro-Metabolic Rehabilitation for Cognitive Decline', body));
-}
-
-async function buildImmuneDrainSeries() {
-  const cards = articles.map((article) => `<article class="article-item"><h3><a href="/${article.slug}/published_article.html">${escapeHtml(article.title)}</a></h3><p>${escapeHtml(article.description)}</p><div class="meta">Published ${article.published} &#183; Updated ${article.updated}</div></article>`).join('');
-  const body = `<header class="site-header"><div class="title-row"><h1>Helen Mulder OT</h1><a href="/">Back to Home</a></div><p>Neuro-Metabolic Rehabilitation for Cognitive Decline</p></header><main><div class="series-kicker">Series</div><h1>Immune Drain Series</h1>${cards}</main>${subscription()}${footer()}`;
-  await writeFile(join(root, 'series', 'immune-drain', 'index.html'), shell('Immune Drain Series', 'Practical articles on reducing chronic burdens in dementia care.', body));
 }
 
 async function buildArticle(article) {
@@ -205,7 +199,7 @@ async function buildArticle(article) {
   const citations = [];
   const mainHtml = renderMarkdown(main, citations, article.slug === 'gum_disease_alzheimers_link', article.slug === 'immune-drain');
   const references = citations.length ? `<section class="references"><h2>References</h2><ol>${citations.map((cite, index) => `<li id="reference-${index + 1}"><a href="${cite.href}">${escapeHtml(cite.label)}</a></li>`).join('')}</ol></section>` : '';
-  const body = `<header class="site-header"><div class="title-row"><h1>Helen Mulder OT</h1><a href="/">Back to Home</a></div><p>Neuro-Metabolic Rehabilitation for Cognitive Decline &#183; <a href="/series/immune-drain/index.html">Immune Drain Series</a></p><div class="micro-meta">Published ${article.published} &#183; Updated ${article.updated}</div></header><main><h1>${escapeHtml(article.title)}</h1>${mainHtml}${seriesNavigation(article.slug)}${references}</main>${subscription()}${footer()}`;
+  const body = `<header class="site-header"><div class="title-row"><h1>Helen Mulder OT</h1><a href="/">Back to Home</a></div><p>Neuro-Metabolic Rehabilitation for Cognitive Decline</p><div class="micro-meta">Published ${article.published} &#183; Updated ${article.updated}</div></header><main><h1>${escapeHtml(article.title)}</h1>${mainHtml}${seriesNavigation(article.slug)}${references}</main>${subscription()}${footer()}`;
   await writeFile(join(root, article.slug, 'published_article.html'), shell(article.title, article.description, body));
 }
 
@@ -227,6 +221,8 @@ async function updateExistingHtml(directory = root) {
     if (entry.isFile() && entry.name.endsWith('.html') && !articles.some((article) => path === join(root, article.slug, 'published_article.html'))) {
       const original = await readFile(path, 'utf8');
       let updated = decode(original).replace(/<style>[\s\S]*?<\/style>/i, '<link rel="stylesheet" href="/assets/site.css">');
+      updated = updated.replaceAll('<a href="/series/immune-drain/index.html">Immune Drain</a>', '<a href="/immune-drain/published_article.html">Immune Drain</a>');
+      updated = updated.replaceAll(' · <a href="/series/signal-safety/index.html">Signal Safety</a>', '');
       if (!updated.includes('name="viewport"')) updated = updated.replace(/<head>/i, '<head><meta name="viewport" content="width=device-width, initial-scale=1">');
       updated = updated.replace(/<meta name="viewport" content="width=device-width, initial-scale=1"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">/i, '<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">');
       if (updated !== original) await writeFile(path, updated);
@@ -237,7 +233,6 @@ async function updateExistingHtml(directory = root) {
 async function main() {
   for (const article of articles) await buildArticle(article);
   await buildHome();
-  await buildImmuneDrainSeries();
   await redirectIndex('healthy-gut-healthy-brain', '/healthy-gut-healthy-brain/published_article.html');
   await redirectIndex('gum_disease_alzheimers_link', '/gum_disease_alzheimers_link/published_article.html');
   await redirect('constipation-prevention-dementia', '/healthy-gut-healthy-brain/published_article.html');
