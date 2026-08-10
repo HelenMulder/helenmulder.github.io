@@ -8,10 +8,31 @@ const scholarlyHosts = new Set([
 ]);
 
 const referenceTitles = new Map([
+  ['https://pubmed.ncbi.nlm.nih.gov/37775319/', 'Association Between Bowel Movement Pattern and Cognitive Function: Prospective Cohort Study and a Metagenomic Analysis of the Gut Microbiome'],
+  ['https://alz-journals.onlinelibrary.wiley.com/doi/10.1002/alz.072046', 'Association between regular laxative use and incident dementia in UK Biobank participants'],
+  ['https://pubmed.ncbi.nlm.nih.gov/2338272/', 'Effect of coffee on distal colon function'],
+  ['https://pubmed.ncbi.nlm.nih.gov/35971232/', 'Prune Juice Containing Sorbitol, Pectin, and Polyphenol Ameliorates Subjective Complaints and Hard Feces While Normalizing Stool in Chronic Constipation: A Randomized Placebo-Controlled Trial'],
+  ['https://pubmed.ncbi.nlm.nih.gov/41889721/', 'Effects of low-dose medium-chain triglycerides on bowel habit outcomes in Japanese adults prone to constipation: a randomized, double-blind, LCT-controlled crossover trial'],
+  ['https://pubmed.ncbi.nlm.nih.gov/474479/', 'The effect of raw carrot on serum lipids and colon function'],
+  ['https://pubmed.ncbi.nlm.nih.gov/39757154/', 'Daily sodium intake and constipation in US adult males: an uncommon negative association revealed by national health and nutrition examination survey data from the United States (2005-2010)'],
+  ['https://pubs.acs.org/doi/10.1021/acs.jproteome.1c00435', 'Fecal Metabolomics and Network Pharmacology Reveal the Correlations between Constipation and Depression'],
+  ['https://pubmed.ncbi.nlm.nih.gov/37905980/', 'Systematic review and meta-analysis: Foods, drinks and diets and their effect on chronic constipation in adults'],
+  ['https://pubmed.ncbi.nlm.nih.gov/39531948/', 'Effectiveness of abdominal massage on chronic constipation in adults: A systematic review and meta-analysis'],
+  ['https://www.science.org/doi/10.1126/sciadv.aau3333', 'Porphyromonas gingivalis in Alzheimer’s disease brains: Evidence for disease causation and treatment with small-molecule inhibitors'],
+  ['https://pubmed.ncbi.nlm.nih.gov/30931751/', 'A Systematic Review Examining the Oral Health Status of Persons with Dementia'],
+  ['https://pubmed.ncbi.nlm.nih.gov/29386812/', 'The effect of sodium bicarbonate oral rinse on salivary pH and oral microflora: A prospective cohort study'],
+  ['https://pubmed.ncbi.nlm.nih.gov/2736577/', 'Effect of eating cheese on Ca and P concentrations of whole mouth saliva and plaque'],
   ['https://pubmed.ncbi.nlm.nih.gov/41630631/', 'Urinary tract infection-related delirium in Alzheimer’s disease and related dementias'],
   ['https://pmc.ncbi.nlm.nih.gov/articles/PMC2140087/', 'Detection of Intracellular Bacterial Communities in Human Urinary Tract Infection'],
   ['https://pubmed.ncbi.nlm.nih.gov/32497610/', 'D-mannose vs other agents for recurrent urinary tract infection prevention in adult women'],
   ['https://pubmed.ncbi.nlm.nih.gov/41004704/', 'Efficacy of D-mannose as prophylaxis of recurrent urinary tract infection'],
+  ['https://pubmed.ncbi.nlm.nih.gov/25861985/', 'Human Urinary Composition Controls Antibacterial Activity of Siderocalin'],
+  ['https://pmc.ncbi.nlm.nih.gov/articles/PMC11277208/', 'Effects of pH on the Pathogenicity of Escherichia coli and Klebsiella pneumoniae on the Kidney: In Vitro and In Vivo Studies'],
+  ['https://pubmed.ncbi.nlm.nih.gov/28975365/', 'Effects of urine alkalinization with sodium bicarbonate orally on lower urinary tract symptoms in female patients: a pilot study'],
+  ['https://pubmed.ncbi.nlm.nih.gov/24333321/', 'Water-loss dehydration and aging'],
+  ['https://pubmed.ncbi.nlm.nih.gov/30285042/', 'Effect of Increased Daily Water Intake in Premenopausal Women With Recurrent Urinary Tract Infections: A Randomized Clinical Trial'],
+  ['https://pubmed.ncbi.nlm.nih.gov/17699358/', 'Comparative value of orange juice versus lemonade in reducing stone-forming risk'],
+  ['https://doi.org/10.1590/s1677-55382011000100003', 'Constipation and LUTS: how do they affect each other?'],
   ['https://pubmed.ncbi.nlm.nih.gov/35783147/', 'Inflammation From Peripheral Organs to the Brain'],
   ['https://doi.org/10.1038/nature01321', 'The inflammatory reflex'],
   ['https://pubmed.ncbi.nlm.nih.gov/12754353/', 'Systemic infection, interleukin 1beta, and cognitive decline in Alzheimer’s disease'],
@@ -82,9 +103,10 @@ function inline(text, citations) {
   let safe = escapeHtml(text).replace(/\[([^\]]+)\]\(((?:https?:\/\/|\/)[^)]+)\)/g, (_, label, href) => {
     const host = href.startsWith('http') ? new URL(href).hostname : '';
     if (scholarlyHosts.has(host)) {
+      const citationKey = href.split('#')[0];
       let reference = citations.find((item) => item.href === href);
       if (!reference) {
-        reference = { href, label: referenceTitles.get(href) || decode(label) };
+        reference = { href, label: referenceTitles.get(citationKey) || decode(label) };
         citations.push(reference);
       }
       return `<sup class="citation"><a href="${href}" aria-label="Citation ${citations.indexOf(reference) + 1}">${citations.indexOf(reference) + 1}</a></sup>`;
