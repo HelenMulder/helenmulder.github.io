@@ -177,8 +177,8 @@ function seriesNavigation(currentSlug) {
     { title: 'Oral Health for Dementia', slug: 'gum_disease_alzheimers_link' },
     { title: 'UTI Prevention for Dementia', slug: 'uti-prevention-for-dementia' },
   ];
-  const link = (route) => `<a href="/${route.slug}/published_article.html"${route.slug === currentSlug ? ' aria-current="page"' : ''}>${escapeHtml(route.title)}${route.slug === currentSlug ? '<span class="current-marker">You are here</span>' : ''}</a>`;
-  return `<section class="series-nav" aria-label="Immune Drain Series"><div class="series-kicker">Series map</div><h2>Part of the Immune Drain Series</h2><div class="series-master">${link(master)}</div><div class="series-guides"><div class="series-nav-label">Care guides</div><ul>${guides.map((guide) => `<li>${link(guide)}</li>`).join('')}</ul></div></section>`;
+  const link = (route, className = '') => `<a class="${className}" href="/${route.slug}/published_article.html"${route.slug === currentSlug ? ' aria-current="page"' : ''}>${escapeHtml(route.title)}${route.slug === currentSlug ? '<span class="current-marker">You are here</span>' : ''}</a>`;
+  return `<section class="series-nav" aria-label="Immune Drain Series"><div class="series-kicker">Part of the series</div><h2>Immune Drain</h2><div class="series-track"><div class="series-master">${link(master, 'series-master-link')}</div><div class="series-guides"><div class="series-nav-label">Care guides</div><ul>${guides.map((guide) => `<li>${link(guide, 'series-guide-link')}</li>`).join('')}</ul></div></div></section>`;
 }
 
 function shell(title, description, body) {
