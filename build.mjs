@@ -13,8 +13,17 @@ const referenceTitles = new Map([
   ['https://pubmed.ncbi.nlm.nih.gov/32497610/', 'D-mannose vs other agents for recurrent urinary tract infection prevention in adult women'],
   ['https://pubmed.ncbi.nlm.nih.gov/41004704/', 'Efficacy of D-mannose as prophylaxis of recurrent urinary tract infection'],
   ['https://pubmed.ncbi.nlm.nih.gov/35783147/', 'Inflammation From Peripheral Organs to the Brain'],
+  ['https://doi.org/10.1038/nature01321', 'The inflammatory reflex'],
+  ['https://pubmed.ncbi.nlm.nih.gov/12754353/', 'Systemic infection, interleukin 1beta, and cognitive decline in Alzheimer’s disease'],
+  ['https://pubmed.ncbi.nlm.nih.gov/34080771/', 'Acute systemic inflammation exacerbates neuroinflammation in Alzheimer’s disease'],
+  ['https://doi.org/10.3389/fnagi.2019.00122', 'Infection-Induced Systemic Inflammation Is a Potential Driver of Alzheimer’s Disease Progression'],
   ['https://pubmed.ncbi.nlm.nih.gov/19414723/', 'Delirium accelerates cognitive decline in Alzheimer disease'],
   ['https://pubmed.ncbi.nlm.nih.gov/20209079/', 'The Alzheimer’s disease-associated amyloid beta-protein is an antimicrobial peptide'],
+  ['https://doi.org/10.1016/j.cell.2010.01.022', 'Nonresolving inflammation'],
+  ['https://pubmed.ncbi.nlm.nih.gov/32709961/', 'Brain energy rescue: an emerging therapeutic concept for neurodegenerative disorders of ageing'],
+  ['https://doi.org/10.3389/fimmu.2020.00493', 'Metabolic reprogramming of microglia in the regulation of the innate inflammatory response'],
+  ['https://doi.org/10.1016/j.freeradbiomed.2016.04.200', 'Energy metabolism and inflammation in brain aging and Alzheimer’s disease'],
+  ['https://doi.org/10.1093/brain/awab094', 'Systemic infection exacerbates cerebrovascular dysfunction in Alzheimer’s disease'],
   ['https://pmc.ncbi.nlm.nih.gov/articles/PMC5488663/', 'Biphasic response as a mechanism against mutant takeover in tissue homeostasis circuits'],
 ]);
 
