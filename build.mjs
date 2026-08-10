@@ -128,9 +128,14 @@ function renderMarkdown(markdown, citations, demoteFirstHeading = false, omitFir
   const flushParagraph = () => { if (paragraph.length) output.push(`<p>${inline(paragraph.join(' '), citations)}</p>`); paragraph = []; };
   const closeList = () => { if (listType) output.push(`</${listType}>`); listType = null; };
 
-  for (const rawLine of lines) {
+  for (let index = 0; index < lines.length; index += 1) {
+    const rawLine = lines[index];
     const line = rawLine.trim();
-    if (!line) { flushParagraph(); closeList(); continue; }
+    if (!line) {
+      const nextLine = lines.slice(index + 1).find((candidate) => candidate.trim());
+      if (listType && nextLine && /^([-*]|\d+\.)\s+/.test(nextLine.trim())) continue;
+      flushParagraph(); closeList(); continue;
+    }
     const heading = /^(#{1,3})\s+(.+)$/.exec(line);
     if (heading) {
       flushParagraph(); closeList();
