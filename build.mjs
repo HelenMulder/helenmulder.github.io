@@ -7,6 +7,17 @@ const scholarlyHosts = new Set([
   'science.org', 'alz-journals.onlinelibrary.wiley.com', 'pubs.acs.org', 'doi.org',
 ]);
 
+const referenceTitles = new Map([
+  ['https://pubmed.ncbi.nlm.nih.gov/41630631/', 'Urinary tract infection-related delirium in Alzheimer’s disease and related dementias'],
+  ['https://pmc.ncbi.nlm.nih.gov/articles/PMC2140087/', 'Detection of Intracellular Bacterial Communities in Human Urinary Tract Infection'],
+  ['https://pubmed.ncbi.nlm.nih.gov/32497610/', 'D-mannose vs other agents for recurrent urinary tract infection prevention in adult women'],
+  ['https://pubmed.ncbi.nlm.nih.gov/41004704/', 'Efficacy of D-mannose as prophylaxis of recurrent urinary tract infection'],
+  ['https://pubmed.ncbi.nlm.nih.gov/35783147/', 'Inflammation From Peripheral Organs to the Brain'],
+  ['https://pubmed.ncbi.nlm.nih.gov/19414723/', 'Delirium accelerates cognitive decline in Alzheimer disease'],
+  ['https://pubmed.ncbi.nlm.nih.gov/20209079/', 'The Alzheimer’s disease-associated amyloid beta-protein is an antimicrobial peptide'],
+  ['https://pmc.ncbi.nlm.nih.gov/articles/PMC5488663/', 'Biphasic response as a mechanism against mutant takeover in tissue homeostasis circuits'],
+]);
+
 const articles = [
   {
     slug: 'healthy-gut-healthy-brain',
@@ -20,14 +31,14 @@ const articles = [
     slug: 'gum_disease_alzheimers_link',
     source: 'gum_disease_alzheimers_link/healthy-mouth-healthy-brain.md',
     title: 'Oral Health for Dementia - Beyond Brushing',
-    description: 'Maintaining a tolerable oral health routine for dementia',
+    description: 'Maintaining a tolerable oral health routine for dementia.',
     published: '2026-01-01',
     updated: '2026-08-09',
   },
   {
     slug: 'immune-drain',
     source: 'drafts/immune-drain.md',
-    title: 'Immune Drain: How chronic infections can burden an already stressed system, and what to do about it',
+    title: 'Immune Drain',
     description: 'How recurring infections and chronic local inflammation can burden an already stressed system.',
     published: '2026-08-09',
     updated: '2026-08-09',
@@ -64,10 +75,10 @@ function inline(text, citations) {
     if (scholarlyHosts.has(host)) {
       let reference = citations.find((item) => item.href === href);
       if (!reference) {
-        reference = { href, label: decode(label) };
+        reference = { href, label: referenceTitles.get(href) || decode(label) };
         citations.push(reference);
       }
-      return `${label}<sup class="citation"><a href="${href}" aria-label="Citation ${citations.indexOf(reference) + 1}">${citations.indexOf(reference) + 1}</a></sup>`;
+      return `<sup class="citation"><a href="${href}" aria-label="Citation ${citations.indexOf(reference) + 1}">${citations.indexOf(reference) + 1}</a></sup>`;
     }
     const token = `@@LINK${links.length}@@`;
     links.push(`<a href="${href}">${label}</a>`);
@@ -125,7 +136,7 @@ function subscription() {
 }
 
 function footer() {
-  return `<footer class="site-footer"><div><strong>Helen Mulder OT</strong></div><div class="small">Helen Mulder is an Occupational Therapist applying Neuro-Metabolic Rehabilitation to address cognitive decline.</div><div class="small">Contact: <a href="mailto:helenjmulder@gmail.com">helenjmulder@gmail.com</a></div><div class="small"><a href="/">Home</a> &#183; <a href="/recipes/index.html">Recipe Library</a> &#183; <a href="/series/immune-drain/index.html">Immune Drain</a> &#183; <a href="/series/signal-safety/index.html">Signal Safety</a></div></footer>`;
+  return `<footer class="site-footer"><div><strong>Helen Mulder OT</strong></div><div class="small">Helen Mulder is an Occupational Therapist applying Neuro-Metabolic Rehabilitation to address cognitive decline.</div><div class="small">Contact: <a href="mailto:helenjmulder@gmail.com">helenjmulder@gmail.com</a></div><div class="small"><a href="/">Home</a> &#183; <a href="/recipes/index.html">Recipe Library</a> &#183; <a href="/series/immune-drain/index.html">Immune Drain</a></div></footer>`;
 }
 
 function seriesNavigation(currentSlug) {
@@ -135,11 +146,7 @@ function seriesNavigation(currentSlug) {
     { title: 'Oral Health for Dementia', slug: 'gum_disease_alzheimers_link' },
     { title: 'UTI Prevention for Dementia', slug: 'uti-prevention-for-dementia' },
   ];
-  const links = routes.map((route) => route.slug === currentSlug
-    ? `<li><span aria-current="page">${escapeHtml(route.title)}</span></li>`
-    : route.slug
-      ? `<li><a href="/${route.slug}/published_article.html">${escapeHtml(route.title)}</a></li>`
-      : `<li><span>${escapeHtml(route.title)} <em>${route.status}</em></span></li>`).join('');
+  const links = routes.map((route) => `<li><a href="/${route.slug}/published_article.html"${route.slug === currentSlug ? ' aria-current="page"' : ''}>${escapeHtml(route.title)}</a></li>`).join('');
   return `<section class="series-nav" aria-label="Immune Drain Series"><div class="series-kicker">Series</div><h2>Part of the Immune Drain Series</h2><ul>${links}</ul></section>`;
 }
 
@@ -148,8 +155,9 @@ function shell(title, description, body) {
 }
 
 async function buildHome() {
-  const cards = articles.map((article) => `<article class="article-item"><h3><a href="/${article.slug}/published_article.html">${escapeHtml(article.title)}</a></h3><p>${escapeHtml(article.description)}</p><div class="meta">Published ${article.published} &#183; Updated ${article.updated}</div></article>`).join('');
-  const body = `<header class="hero"><h1>Helen Mulder OT</h1><p class="tagline">Neuro-Metabolic Rehabilitation for Cognitive Decline</p></header><section class="series-panel"><div class="series-kicker">Series</div><h2 class="series-title"><a href="/series/immune-drain/index.html">Immune Drain Series</a></h2>${cards}</section><section class="series-panel"><div class="series-kicker">Series</div><h2 class="series-title"><a href="/series/signal-safety/index.html">Signal Safety Series</a></h2><p class="meta">Coming soon.</p></section><section class="series-panel"><div class="series-kicker">Library</div><h2 class="series-title"><a href="/recipes/index.html">Recipe Library</a></h2></section>${subscription()}${footer()}`;
+  const ordered = [...articles].sort((a, b) => (a.slug === 'immune-drain' ? -1 : b.slug === 'immune-drain' ? 1 : 0));
+  const cards = ordered.map((article) => `<article class="article-item"><h3><a href="/${article.slug}/published_article.html">${escapeHtml(article.title)}</a></h3><p>${escapeHtml(article.description)}</p><div class="meta">Published ${article.published} &#183; Updated ${article.updated}</div></article>`).join('');
+  const body = `<header class="hero"><h1>Helen Mulder OT</h1><p class="tagline">Neuro-Metabolic Rehabilitation for Cognitive Decline</p></header><section class="article-library"><div class="series-kicker">Writing</div>${cards}</section><section class="series-panel library-panel"><h2 class="series-title"><a href="/recipes/index.html">Recipe Library</a></h2></section>${subscription()}${footer()}`;
   await writeFile(join(root, 'index.html'), shell('Helen Mulder OT', 'Neuro-Metabolic Rehabilitation for Cognitive Decline', body));
 }
 
@@ -201,6 +209,7 @@ async function main() {
   await redirectIndex('gum_disease_alzheimers_link', '/gum_disease_alzheimers_link/published_article.html');
   await redirect('constipation-prevention-dementia', '/healthy-gut-healthy-brain/published_article.html');
   await redirect('oral_hygiene_dementia', '/gum_disease_alzheimers_link/published_article.html');
+  await redirectIndex('series/signal-safety', '/');
   await updateExistingHtml();
   console.log('Built site.');
 }

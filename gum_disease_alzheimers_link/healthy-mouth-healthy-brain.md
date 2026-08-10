@@ -9,11 +9,6 @@ target_condition: Alzheimer's Disease / Dementia
 
 intervention_type: Clinical Theory / Preventative
 series: Immune Drain
-protocol_logic:
-  - objective: "Reduce Gingipain toxin arrival to the brain by managing oral microbiome."
-  - mechanism: "Amyloid peptides deposit as an immune response to neutralize oral toxins (Gingipains)."
-  - risk_factor: "Low energy brain state prevents microglial cleanup of amyloid debris."
-  - intervention: "Maintain alkaline oral pH and biofilm disruption."
 ---
 
 # The Importance of Oral Health 
