@@ -76,9 +76,15 @@ ul, ol { padding-left: 1.35rem; }
 .site-footer { margin-top: 2.5rem; padding-top: 1.2rem; border-top: 1px solid var(--line); }
 .series-nav { margin-top: 2.5rem; padding: 1.15rem; border: 1px solid var(--line); border-radius: .7rem; background: var(--surface); }
 .series-nav h2 { margin: .2rem 0 .75rem; font-size: 1.2rem; }
-.series-nav ul { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .45rem 1rem; margin: 0; padding: 0; list-style: none; }
+.series-master { padding: .7rem .8rem; border: 1px solid #c8d8d0; border-radius: .5rem; background: #f4f8f5; }
+.series-master a { font-weight: 700; font-size: 1.05rem; }
+.series-guides { margin-top: .9rem; }
+.series-nav-label { color: var(--muted); font-family: system-ui, sans-serif; font-size: .73rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+.series-nav ul { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .45rem 1rem; margin: .35rem 0 0; padding: 0; list-style: none; }
 .series-nav li { margin: 0; }
+.series-nav a { display: inline-flex; align-items: baseline; gap: .45rem; }
 .series-nav [aria-current="page"] { font-weight: 700; color: var(--ink); text-decoration-color: var(--accent-soft); }
+.current-marker { color: var(--muted); font-family: system-ui, sans-serif; font-size: .72rem; font-weight: 500; white-space: nowrap; }
 .series-nav em { color: var(--muted); font-size: .9em; }
 .subscribe-strip { margin-top: 2rem; padding: 1rem 1.15rem; border: 1px solid var(--line); border-left: 4px solid var(--accent-soft); border-radius: .7rem; background: var(--surface); }
 .subscribe-title { font-weight: 700; }
