@@ -172,7 +172,7 @@ function inline(text, citations) {
         reference = { href, label: referenceTitles.get(citationKey) || decode(label) };
         citations.push(reference);
       }
-      return `<sup class="citation"><a href="${href}" aria-label="Citation ${citations.indexOf(reference) + 1}">${citations.indexOf(reference) + 1}</a></sup>`;
+      return `${label}<sup class="citation"><a href="${href}" aria-label="Citation ${citations.indexOf(reference) + 1}">${citations.indexOf(reference) + 1}</a></sup>`;
     }
     const token = `@@LINK${links.length}@@`;
     links.push(`<a href="${href}">${label}</a>`);
